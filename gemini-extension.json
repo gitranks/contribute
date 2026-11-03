@@ -1,0 +1,19 @@
+{
+  "name": "gitranks-contribute",
+  "version": "0.1.0",
+  "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com.",
+  "mcpServers": {
+    "gitranks": {
+      "httpUrl": "https://mcp.gitranks.com/mcp",
+      "headers": { "Authorization": "Bearer ${GITRANKS_MCP_TOKEN}" }
+    }
+  },
+  "settings": [
+    {
+      "name": "GitRanks token",
+      "description": "From gitranks.com → Contribute → Settings → Your own agent (MCP). Starts with gr_.",
+      "envVar": "GITRANKS_MCP_TOKEN",
+      "sensitive": true
+    }
+  ]
+}

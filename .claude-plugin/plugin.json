@@ -1,0 +1,24 @@
+{
+  "name": "gitranks-contribute",
+  "displayName": "GitRanks Contribute",
+  "version": "0.1.0",
+  "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com.",
+  "author": { "name": "GitRanks", "url": "https://gitranks.com" },
+  "homepage": "https://gitranks.com/contribute",
+  "repository": "https://github.com/gitranks/contribute",
+  "license": "MIT",
+  "keywords": ["open-source", "contribution", "mcp", "pull-requests", "good-first-issue"],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://github.com/gitranks/contribute#readme",
+  "privacyPolicyUrl": "https://gitranks.com/privacy",
+  "termsOfServiceUrl": "https://gitranks.com/terms",
+  "userConfig": {
+    "token": {
+      "type": "string",
+      "title": "GitRanks token",
+      "description": "From gitranks.com → Contribute → Settings → Your own agent (MCP). Starts with gr_.",
+      "required": true,
+      "sensitive": true
+    }
+  }
+}

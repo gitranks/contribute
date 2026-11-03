@@ -1,0 +1,12 @@
+{
+  "name": "gitranks",
+  "description": "GitRanks Contribute for Claude Code.",
+  "owner": { "name": "GitRanks", "url": "https://gitranks.com" },
+  "plugins": [
+    {
+      "name": "gitranks-contribute",
+      "source": "./",
+      "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com."
+    }
+  ]
+}
