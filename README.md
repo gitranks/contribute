@@ -33,6 +33,19 @@ gemini extensions install https://github.com/gitranks/contribute
 
 Gemini CLI asks for your token (`GITRANKS_MCP_TOKEN`) and keeps it in your system keychain.
 
+### Antigravity
+
+Add the `gitranks` entry to Antigravity's MCP config, `~/.gemini/config/mcp_config.json`. In the IDE, open it from the
+… menu at the top of the agent panel → MCP Servers → Manage MCP Servers → View raw config.
+
+```json
+{ "mcpServers": { "gitranks": { "serverUrl": "https://mcp.gitranks.com/mcp", "headers": { "Authorization": "Bearer <your GitRanks token>" } } } }
+```
+
+Antigravity can't read environment variables in this file yet, so the token sits in it: keep the file to yourself.
+Then refresh its MCP servers: in the app, the refresh button under Settings → Customizations → Installed MCP Servers;
+in the CLI, `/mcp`.
+
 ### Codex, Cursor and others
 
 Save the token in your environment as `GITRANKS_MCP_TOKEN`, then add the server:
@@ -60,6 +73,10 @@ The skill in `skills/contribute/SKILL.md` works in any agent that reads Agent Sk
 Ask your agent: "Find me an open-source issue to work on with GitRanks." It lists issues picked for you, claims the one
 you choose, fixes it on your machine and hands the change back. Then review it and approve the pull request on
 gitranks.com.
+
+In Claude Code the plugin adds two commands:
+- `/gitranks-contribute:find [language, kind or owner/repo]`: issues picked for you, then work on the one you choose;
+- `/gitranks-contribute:status`: your claims and pull requests, and what each one needs from you.
 
 ## What is sent to GitRanks
 
