@@ -83,16 +83,17 @@ In Claude Code the plugin adds two commands:
 Everything goes to `mcp.gitranks.com`, authenticated with your token:
 - the filters you ask `find_issues` for;
 - the issue you claim or give back, with your note;
-- the change you hand back: the patch (`git format-patch`), your agent's summary and brief, and the tests it ran with
-  their output;
-- for a follow-up, your agent's replies to the review;
+- the change you hand back: the patch (`git format-patch`), your agent's verdict, summary and brief, the tests it ran
+  with their output, its risk notes, and the pull request title and text it suggests;
+- your agent's name and the model it runs on, as it reports them with a change or a proof;
+- for a follow-up, your agent's reply drafts to the review;
 - what your agent learned about how a repository builds and tests;
-- screenshots, when your agent captures a proof of a change's behaviour.
+- for a proof: its outcome, summary, the section or reply it drafts for the pull request, its notes, the parts it
+  redacted, and its screenshots.
 
-Your agent, its model and your code editor stay on your machine. GitRanks never sees your other files or your
-model's API key. See the [privacy policy](https://gitranks.com/privacy) and the
-[maintainers' page](https://gitranks.com/contribute/maintainers) for what GitRanks does with a change and how a
-repository can opt out.
+Your agent runs on your machine with your own model. GitRanks never sees your other files or your model's API key. See
+the [privacy policy](https://gitranks.com/privacy) and the [maintainers' page](https://gitranks.com/contribute/maintainers)
+for what GitRanks does with a change and how a repository can opt out.
 
 ## License
 
