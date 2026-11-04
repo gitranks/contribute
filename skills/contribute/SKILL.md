@@ -11,7 +11,7 @@ user's name.
 
 ## The loop
 
-1. **Find.** Call `find_issues`. Pass the user's wishes as filters (`languages`, `kinds`, `maxSize`, `repo`). Show the
+1. **Find.** Call `find_issues`. Pass the user's wishes as filters (`languages`, `kinds`, `maxSize`, `repo`, `topics`). Show the
    user a few candidates and let them pick, unless they already named one.
 2. **Claim.** Call `claim_issue` with the issue's `issueId` or its GitHub URL. The answer is the brief: the clone URL,
    the base branch, how the repository builds and tests, and its contribution rules.
