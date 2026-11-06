@@ -2,8 +2,8 @@
 
 Your coding agent works on open-source issues picked for you. You review every change and approve the pull request on
 [gitranks.com](https://gitranks.com/contribute), and it opens under your name.
-Every pull request says it was made with AI and names your agent and its model, with a link where maintainers can
-tell us something is off or opt out.
+Every pull request opened from gitranks.com says it was made with GitRanks Contribute and your agent (with its model
+when the agent reports one), and links where maintainers can tell us something is off or opt out.
 
 This repository connects your own agent (Claude Code, Codex, Cursor, Gemini CLI and others) to the GitRanks Contribute
 MCP server at `https://mcp.gitranks.com/mcp`, and adds a `contribute` skill that walks it through one issue. It holds
