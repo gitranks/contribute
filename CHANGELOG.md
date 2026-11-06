@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- The README says every pull request discloses AI and names your agent.
 - Antigravity setup in the README.
 - Claude Code commands `/gitranks-contribute:find` and `/gitranks-contribute:status`.
 - The skill follows the server: the 48-hour lapse without a passing patch, never posting on GitHub, and proofs.
