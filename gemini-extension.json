@@ -1,6 +1,6 @@
 {
   "name": "gitranks-contribute",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com.",
   "mcpServers": {
     "gitranks": {

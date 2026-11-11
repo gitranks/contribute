@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.1 (2026-11-11)
+
 - `llms-install.md` points agents to gitranks.com/contribute/agents.md.
 - The skill says how the server connects: the user signs in on gitranks.com (with the sign-in step for Claude Code,
   Gemini CLI and Codex), and a token is only for clients that can't sign in.
