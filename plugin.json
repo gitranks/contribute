@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "gitranks-contribute",
+  "version": "0.1.0",
+  "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com.",
+  "author": { "name": "GitRanks", "url": "https://gitranks.com" },
+  "homepage": "https://gitranks.com/contribute",
+  "repository": "https://github.com/gitranks/contribute",
+  "license": "MIT",
+  "keywords": ["open-source", "contribution", "mcp", "pull-requests", "good-first-issue"]
+}
