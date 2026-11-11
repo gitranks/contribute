@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- `llms-install.md` points agents to gitranks.com/contribute/agents.md.
+
 ## 0.2.0 (2026-11-11)
 
 - Sign in instead of copying a token: the Claude Code plugin and the Gemini CLI extension connect with the URL alone,
