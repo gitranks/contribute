@@ -9,6 +9,14 @@ GitRanks Contribute recommends open-source issues that fit the user, and you fix
 open the pull request: the user reviews your change and approves it on gitranks.com, and GitRanks opens it under the
 user's name.
 
+## Connecting
+
+The `gitranks` server (`https://mcp.gitranks.com/mcp`) connects by signing in: the user's client opens gitranks.com,
+where they sign in with GitHub and press Allow. If the GitRanks tools are missing, or a call answers that sign-in is
+required, ask the user to start their client's sign-in for `gitranks` (in Claude Code: `/mcp`, pick the gitranks
+server, then Authenticate). Never ask them to paste anything from that page. A personal token is only for clients that
+can't sign in; the README says how to set one.
+
 ## The loop
 
 1. **Find.** Call `find_issues`. Pass the user's wishes as filters (`languages`, `kinds`, `maxSize`, `repo`, `topics`). Show the
