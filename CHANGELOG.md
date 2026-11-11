@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.0 (2026-11-11)
+
 - Sign in instead of copying a token: the Claude Code plugin and the Gemini CLI extension connect with the URL alone,
   and your agent opens gitranks.com in the browser to sign in.
 - The token is optional, for clients without sign-in. When set, it goes in the `X-GitRanks-Token` header instead of
