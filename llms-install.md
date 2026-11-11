@@ -1,12 +1,23 @@
 # Installing GitRanks Contribute (for AI agents)
 
-1. Ask the user for their GitRanks token. They create it on https://gitranks.com/contribute under
-   Settings → Your own agent (MCP). It starts with `gr_`. Never print it back or write it into a file in a repository.
-2. Add a remote MCP server named `gitranks`:
+1. Add a remote MCP server named `gitranks`:
    - transport: streamable HTTP
    - URL: `https://mcp.gitranks.com/mcp`
-   - header: `Authorization: Bearer <token>`
-   Prefer reading the token from the `GITRANKS_MCP_TOKEN` environment variable when the client supports it.
-3. Check the connection by calling `find_issues`. A 401 means the token is wrong or revoked.
+   - no headers.
+2. Connect it. The server answers the first call with a sign-in request: start your client's sign-in (OAuth) for
+   `gitranks`. It opens gitranks.com in the user's browser, where they sign in with GitHub and press Allow. Tell the
+   user that is what the page is for. Never ask them to paste anything from it.
+3. Check the connection by calling `find_issues`. A 401 after sign-in means the user cancelled or disconnected the
+   agent on gitranks.com: sign in again.
 4. Read `skills/contribute/SKILL.md` for the loop: find, claim, fix on a fresh clone, hand the patch back with
    `submit_patch`. Never push or open a pull request: the user approves it on gitranks.com.
+
+## Use a token instead
+
+Only when your client can't sign in (no OAuth support, no browser):
+
+1. Ask the user for a GitRanks token. They create it on https://gitranks.com/contribute under
+   Settings → Your own agent (MCP). It starts with `gr_`. Never print it back or write it into a file in a repository.
+2. Send it with every request in the header `X-GitRanks-Token: <token>` (or `Authorization: Bearer <token>`).
+   Prefer reading it from the `GITRANKS_MCP_TOKEN` environment variable when the client supports it.
+3. A 401 then means the token is wrong or revoked.
