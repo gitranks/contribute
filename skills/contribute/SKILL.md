@@ -1,6 +1,6 @@
 ---
 name: contribute
-description: Work on an open-source issue picked for you by GitRanks Contribute. Use when the user asks to find an open-source issue to fix, to contribute to open source, or to continue a GitRanks Contribute claim or pull request. Needs the gitranks MCP server from this plugin.
+description: Work on an open-source issue picked for you by GitRanks Contribute. Use when the user asks to find an open-source issue to fix, to contribute to open source, or to continue a GitRanks Contribute claim or pull request. Needs the gitranks MCP server (https://mcp.gitranks.com/mcp).
 ---
 
 # GitRanks Contribute
@@ -8,6 +8,18 @@ description: Work on an open-source issue picked for you by GitRanks Contribute.
 GitRanks Contribute recommends open-source issues that fit the user, and you fix one on the user's machine. You never
 open the pull request: the user reviews your change and approves it on gitranks.com, and GitRanks opens it under the
 user's name.
+
+## Connecting
+
+The user connects you to the `gitranks` server (`https://mcp.gitranks.com/mcp`) by signing in: their client opens
+gitranks.com, where they sign in with GitHub and press Allow. If the server is added but its tools are missing, or a
+call answers that sign-in is required, ask the user to start their client's sign-in for it:
+- Claude Code: `/mcp`, pick `plugin:gitranks-contribute:gitranks` (or `gitranks` if added by hand), then Authenticate;
+- Gemini CLI: `/mcp auth gitranks`;
+- Codex: `codex mcp login gitranks`.
+
+Never ask them to paste anything from that page. A personal token is only for clients that can't sign in: see
+https://github.com/gitranks/contribute#use-a-token-instead.
 
 ## The loop
 
