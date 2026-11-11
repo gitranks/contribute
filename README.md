@@ -13,9 +13,9 @@ GitRanks Contribute is in beta. It is free.
 
 ## How you connect
 
-Add the server's URL to your agent, then sign in. The first time your agent connects, it opens gitranks.com in your
-browser: sign in with GitHub, check what the agent will be able to do, and press **Allow**. Your agent keeps the access
-it gets and renews it by itself while you use it. Nobody copies a token.
+Add the server's URL to your agent, then sign in from it. Your agent opens gitranks.com in your browser: sign in with
+GitHub, check what the agent will be able to do, and press **Allow**. Your agent keeps the access it gets and renews it
+by itself while you use it. Nobody copies a token.
 
 Each agent you connect is listed on gitranks.com under **Contribute → Settings → Your own agent (MCP)**, where you can
 disconnect it at any time.
@@ -32,7 +32,7 @@ claude plugin install gitranks-contribute@gitranks
 ```
 
 If Claude Code offers a token field when the plugin is enabled, leave it empty: it is optional. Then run `/mcp`, pick
-the `gitranks` server, choose **Authenticate** and sign in on gitranks.com.
+`plugin:gitranks-contribute:gitranks`, choose **Authenticate** and sign in on gitranks.com.
 
 Without the plugin: `claude mcp add --transport http gitranks https://mcp.gitranks.com/mcp`, then `/mcp` → `gitranks` →
 **Authenticate**.
@@ -65,6 +65,12 @@ Add the server by its URL alone; the editor offers to sign in when it first conn
   { "mcpServers": { "gitranks": { "url": "https://mcp.gitranks.com/mcp" } } }
   ```
 
+- **VS Code** (`.vscode/mcp.json` in a workspace, or **MCP: Open User Configuration**):
+
+  ```json
+  { "servers": { "gitranks": { "type": "http", "url": "https://mcp.gitranks.com/mcp" } } }
+  ```
+
 - **Any MCP client** with streamable HTTP and sign-in: URL `https://mcp.gitranks.com/mcp`, nothing else.
 
 This repository is also an [Agent Plugins](https://github.com/agentplugins/agent-plugins-spec) package (`plugin.json`
@@ -86,7 +92,8 @@ The skill in `skills/contribute/SKILL.md` works in any agent that reads Agent Sk
 For a client without sign-in, or a script, create a personal token on
 [gitranks.com/contribute](https://gitranks.com/contribute) under **Contribute → Settings → Your own agent (MCP)**. It
 starts with `gr_`. Send it in the `X-GitRanks-Token` header, or as `Authorization: Bearer <your token>`. Keep it to
-yourself: it acts as you until you revoke it there.
+yourself: it acts as you until you revoke it there. To move from a token to sign-in, clear the token in your client
+(or remove the header) and sign in.
 
 - **Claude Code plugin:** set the plugin's token option (in `/plugin`, open GitRanks Contribute and configure it).
   Claude Code keeps it in your system keychain and sends it in `X-GitRanks-Token`.
@@ -135,10 +142,11 @@ In Claude Code the plugin adds two commands:
 Everything goes to `mcp.gitranks.com`, except the sign-in page and your approvals, which are on `gitranks.com`.
 
 When you sign in:
-- your agent registers itself: the name it gives itself and the address the sign-in answer goes back to (on your
-  computer, or the client's own page). The consent page shows both;
+- your agent registers itself: the name it gives itself, the address the sign-in answer goes back to (on your
+  computer, or the client's own page), and the other details it registers with, such as its version or homepage. The
+  consent page shows the name and the address;
 - you sign in to gitranks.com with GitHub, and press Allow. Your agent then gets an access token and a refresh token
-  from `mcp.gitranks.com`, which it sends with every call and uses to renew its access.
+  from `mcp.gitranks.com`. It sends the access token with every call and uses the refresh token to renew it.
 
 With every tool call, the access token (or your personal token, when you use one), and:
 - the filters you ask `find_issues` for;
