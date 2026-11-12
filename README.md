@@ -1,7 +1,7 @@
 # GitRanks Contribute
 
 Your coding agent works on open-source issues picked for you. You review every change and approve the pull request on
-[gitranks.com](https://gitranks.com/contribute), and it opens under your name.
+[gitranks.com](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme), and it opens under your name.
 Every pull request opened from gitranks.com says it was made with GitRanks Contribute and your agent (with its model
 when the agent reports one), and links where maintainers can tell us something is off or opt out.
 
@@ -24,6 +24,16 @@ A client that can't sign in can still use a personal token: see [Use a token ins
 
 ## Install
 
+One click, then confirm in your client and sign in on gitranks.com when it asks:
+
+- **Claude** (claude.ai and Claude Desktop): [Add GitRanks Contribute to Claude](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=GitRanks%20Contribute&connectorUrl=https%3A%2F%2Fmcp.gitranks.com%2Fmcp)
+- **Cursor:** [![Add gitranks MCP server to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en/install-mcp?name=gitranks&config=eyJ1cmwiOiJodHRwczovL21jcC5naXRyYW5rcy5jb20vbWNwIn0%3D)
+- **VS Code:** [![Install in VS Code](https://img.shields.io/badge/VS_Code-Install_GitRanks_Contribute-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect/mcp/install?name=gitranks&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmcp.gitranks.com%2Fmcp%22%7D)
+- **Kiro:** [![Add to Kiro](https://kiro.dev/images/add-to-kiro.svg)](https://kiro.dev/launch/mcp/add?name=gitranks&config=%7B%22url%22%3A%22https%3A%2F%2Fmcp.gitranks.com%2Fmcp%22%7D)
+
+Each link opens the client's own add-server dialog with the URL filled in; nothing is added until you confirm it there.
+The setup line for every other client is below.
+
 ### Claude Code
 
 ```bash
@@ -31,11 +41,20 @@ claude plugin marketplace add gitranks/contribute
 claude plugin install gitranks-contribute@gitranks
 ```
 
+On Claude Code 2.1.292 or later, one line does both:
+`claude plugin install gitranks-contribute --marketplace gitranks/contribute`.
+
 If Claude Code offers a token field when the plugin is enabled, leave it empty: it is optional. Then run `/mcp`, pick
 `plugin:gitranks-contribute:gitranks`, choose **Authenticate** and sign in on gitranks.com.
 
 Without the plugin: `claude mcp add --transport http gitranks https://mcp.gitranks.com/mcp`, then `/mcp` → `gitranks` →
 **Authenticate**.
+
+### Claude Desktop and claude.ai
+
+Use the [Add to Claude link](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=GitRanks%20Contribute&connectorUrl=https%3A%2F%2Fmcp.gitranks.com%2Fmcp)
+above, or by hand: **Customize → Connectors → Add → Add custom connector**, name `GitRanks Contribute`, URL
+`https://mcp.gitranks.com/mcp`. Then **Connect** it and sign in on gitranks.com.
 
 ### Gemini CLI
 
@@ -55,9 +74,13 @@ codex mcp add gitranks --url https://mcp.gitranks.com/mcp
 codex mcp login gitranks
 ```
 
-### Cursor, VS Code and others
+This repository is also a Codex plugin marketplace, which adds the skill too:
+`codex plugin marketplace add gitranks/contribute`, then install GitRanks Contribute from `/plugins` in Codex (or the
+Plugins Directory in the ChatGPT desktop app) and sign in on gitranks.com when it asks.
 
-Add the server by its URL alone; the editor offers to sign in when it first connects.
+### Cursor, VS Code and Kiro
+
+Use the buttons above, or add the server by its URL alone; the editor offers to sign in when it first connects.
 
 - **Cursor** (`~/.cursor/mcp.json`):
 
@@ -71,26 +94,70 @@ Add the server by its URL alone; the editor offers to sign in when it first conn
   { "servers": { "gitranks": { "type": "http", "url": "https://mcp.gitranks.com/mcp" } } }
   ```
 
+- **Kiro** (`~/.kiro/settings/mcp.json`, or `.kiro/settings/mcp.json` in a workspace):
+
+  ```json
+  { "mcpServers": { "gitranks": { "url": "https://mcp.gitranks.com/mcp" } } }
+  ```
+
+### Other clients
+
+Each one connects by the URL alone and signs in on gitranks.com in your browser:
+
+- **GitHub Copilot CLI:** `copilot mcp add --transport http gitranks https://mcp.gitranks.com/mcp`. The browser opens to
+  sign in on first use; `/mcp auth gitranks` signs in again. The plugin may also install with
+  `copilot plugin install gitranks/contribute` (not tested yet).
+- **Devin** (CLI and Desktop): `devin mcp add gitranks https://mcp.gitranks.com/mcp`, then `devin mcp login gitranks`.
+- **Amp:** `amp mcp add gitranks https://mcp.gitranks.com/mcp`. Amp opens the sign-in page in your browser when it
+  starts.
+- **opencode:** `opencode mcp add gitranks --url https://mcp.gitranks.com/mcp`, then `opencode mcp auth gitranks`.
+- **Zed:** Settings → AI → MCP Servers → Add Server → Add Remote Server, or in `settings.json`
+  `{ "context_servers": { "gitranks": { "url": "https://mcp.gitranks.com/mcp" } } }`. Zed asks you to sign in when it
+  connects.
+- **Cline:** `cline mcp add gitranks https://mcp.gitranks.com/mcp --transport http`, or in `cline_mcp_settings.json`
+  (set the type: without it Cline falls back to the old SSE transport):
+
+  ```json
+  { "mcpServers": { "gitranks": { "type": "streamableHttp", "url": "https://mcp.gitranks.com/mcp" } } }
+  ```
+
+  Then authorize it (OAuth) when Cline offers to, and sign in.
+- **Factory droid:** `droid mcp add gitranks https://mcp.gitranks.com/mcp --type http`, then `/mcp` in Droid and sign
+  in in the browser.
+- **Warp:** Settings → Agents → MCP servers → **+ Add**, paste
+  `{ "gitranks": { "url": "https://mcp.gitranks.com/mcp" } }`, then **Start**: the browser opens to sign in.
+- **Clients without sign-in for remote servers** (JetBrains AI Assistant, Augment, clients that only run local
+  servers): connect through the [`mcp-remote`](https://github.com/geelen/mcp-remote) bridge, which signs in for them.
+  It opens the browser on first run:
+
+  ```json
+  { "mcpServers": { "gitranks": { "command": "npx", "args": ["-y", "mcp-remote", "https://mcp.gitranks.com/mcp", "--transport", "http-only"] } } }
+  ```
+
 - **Any MCP client** with streamable HTTP and sign-in: URL `https://mcp.gitranks.com/mcp`, nothing else.
-
-This repository is also an [Agent Plugins](https://github.com/agentplugins/agent-plugins-spec) package (`plugin.json`
-and `mcp.json` at its root, plus the skill), for clients and marketplaces that install that format. It carries the URL
-only, so it connects by signing in.
-
-### Claude Desktop and claude.ai
-
-Settings → Connectors → Add custom connector, with the URL `https://mcp.gitranks.com/mcp`. Then connect it and sign in.
 
 ### Antigravity
 
 Antigravity connects with a token for now: see [Use a token instead](#use-a-token-instead).
 
-The skill in `skills/contribute/SKILL.md` works in any agent that reads Agent Skills.
+### Plugin formats in this repository
+
+The skill in `skills/contribute/SKILL.md` works in any agent that reads Agent Skills. The repository packages it with
+the server for each plugin format below. Each connects by signing in; only the Claude Code plugin and the Gemini CLI
+extension also take the optional token.
+
+- `.claude-plugin/` and `.mcp.json`: the Claude Code plugin and its marketplace (`gitranks`);
+- `gemini-extension.json`: the Gemini CLI extension;
+- `plugin.json` and `mcp.json` at the root: an [Agent Plugins](https://github.com/agentplugins/agent-plugins-spec)
+  package, for clients and marketplaces that install that format;
+- `.agents/plugins/marketplace.json`: the Codex plugin marketplace;
+- `.devin-plugin/plugin.json`: the Devin plugin manifest;
+- `.antigravity-plugin/plugin.json` and `mcp_config.json`: the Antigravity plugin manifest and its server.
 
 ## Use a token instead
 
 For a client without sign-in, or a script, create a personal token on
-[gitranks.com/contribute](https://gitranks.com/contribute) under **Contribute → Settings → Your own agent (MCP)**. It
+[gitranks.com/contribute](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme) under **Contribute → Settings → Your own agent (MCP)**. It
 starts with `gr_`. Send it in the `X-GitRanks-Token` header, or as `Authorization: Bearer <your token>`. Keep it to
 yourself: it acts as you until you revoke it there. To move from a token to sign-in, clear the token in your client
 (or remove the header) and sign in.
@@ -160,8 +227,8 @@ With every tool call, the access token (or your personal token, when you use one
   it removed (for example "2 IP addresses"), and its screenshots, which go to upload links the server gives.
 
 Your agent runs on your machine with your own model. GitRanks never sees your other files or your model's API key, and
-your agent never gets your GitHub access. See the [privacy policy](https://gitranks.com/privacy) and the
-[maintainers' page](https://gitranks.com/contribute/maintainers) for what GitRanks does with a change and how a
+your agent never gets your GitHub access. See the [privacy policy](https://gitranks.com/privacy?utm_source=github&utm_campaign=plugin-readme) and the
+[maintainers' page](https://gitranks.com/contribute/maintainers?utm_source=github&utm_campaign=plugin-readme) for what GitRanks does with a change and how a
 repository can opt out.
 
 ## License
