@@ -1,7 +1,8 @@
 # GitRanks Contribute
 
-Your coding agent works on open-source issues picked for you. You review every change and approve the pull request on
-[gitranks.com](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme), and it opens under your name.
+Your coding agent works on open-source issues picked for you. You review every change and approve the pull request
+on [gitranks.com](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme), and it opens under your
+name.
 Every pull request opened from gitranks.com says it was made with GitRanks Contribute and your agent (with its model
 when the agent reports one), and links where maintainers can tell us something is off or opt out.
 
@@ -74,9 +75,9 @@ codex mcp add gitranks --url https://mcp.gitranks.com/mcp
 codex mcp login gitranks
 ```
 
-This repository is also a Codex plugin marketplace, which adds the skill too:
-`codex plugin marketplace add gitranks/contribute`, then install GitRanks Contribute from `/plugins` in Codex (or the
-Plugins Directory in the ChatGPT desktop app) and sign in on gitranks.com when it asks.
+Or, instead of those two lines, the plugin, which adds the skill too: this repository is a Codex plugin marketplace.
+Run `codex plugin marketplace add gitranks/contribute`, then install GitRanks Contribute from `/plugins` in Codex (or
+the Plugins Directory in the ChatGPT desktop app) and sign in on gitranks.com when it asks.
 
 ### Cursor, VS Code and Kiro
 
@@ -152,15 +153,16 @@ extension also take the optional token.
   package, for clients and marketplaces that install that format;
 - `.agents/plugins/marketplace.json`: the Codex plugin marketplace;
 - `.devin-plugin/plugin.json`: the Devin plugin manifest;
-- `.antigravity-plugin/plugin.json` and `mcp_config.json`: the Antigravity plugin manifest and its server.
+- `.antigravity-plugin/plugin.json` and `mcp_config.json`: the Antigravity plugin manifest and its server, by sign-in
+  (not tested in Antigravity yet; until it is, set up Antigravity with a token as above).
 
 ## Use a token instead
 
 For a client without sign-in, or a script, create a personal token on
-[gitranks.com/contribute](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme) under **Contribute → Settings → Your own agent (MCP)**. It
-starts with `gr_`. Send it in the `X-GitRanks-Token` header, or as `Authorization: Bearer <your token>`. Keep it to
-yourself: it acts as you until you revoke it there. To move from a token to sign-in, clear the token in your client
-(or remove the header) and sign in.
+[gitranks.com/contribute](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme) under
+**Contribute → Settings → Your own agent (MCP)**. It starts with `gr_`. Send it in the `X-GitRanks-Token` header, or
+as `Authorization: Bearer <your token>`. Keep it to yourself: it acts as you until you revoke it there. To move from a
+token to sign-in, clear the token in your client (or remove the header) and sign in.
 
 - **Claude Code plugin:** set the plugin's token option (in `/plugin`, open GitRanks Contribute and configure it).
   Claude Code keeps it in your system keychain and sends it in `X-GitRanks-Token`.
@@ -227,9 +229,10 @@ With every tool call, the access token (or your personal token, when you use one
   it removed (for example "2 IP addresses"), and its screenshots, which go to upload links the server gives.
 
 Your agent runs on your machine with your own model. GitRanks never sees your other files or your model's API key, and
-your agent never gets your GitHub access. See the [privacy policy](https://gitranks.com/privacy?utm_source=github&utm_campaign=plugin-readme) and the
-[maintainers' page](https://gitranks.com/contribute/maintainers?utm_source=github&utm_campaign=plugin-readme) for what GitRanks does with a change and how a
-repository can opt out.
+your agent never gets your GitHub access. See the
+[privacy policy](https://gitranks.com/privacy?utm_source=github&utm_campaign=plugin-readme) and the
+[maintainers' page](https://gitranks.com/contribute/maintainers?utm_source=github&utm_campaign=plugin-readme) for what
+GitRanks does with a change and how a repository can opt out.
 
 ## License
 

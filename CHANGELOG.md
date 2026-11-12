@@ -5,13 +5,15 @@
 ## 0.2.2 (2026-11-12)
 
 - One-click install links at the top of the README for claude.ai and Claude Desktop, Cursor, VS Code and Kiro.
-- The README's Claude Desktop and claude.ai path is now Customize → Connectors → Add → Add custom connector, and it
-  gives the one-line Claude Code plugin install for Claude Code 2.1.292 and later.
+- The README's Claude Desktop and claude.ai path is now Customize → Connectors → Add → Add custom connector.
+- The README gives the one-line Claude Code plugin install for Claude Code 2.1.292 and later.
 - Setup lines with their sign-in step for GitHub Copilot CLI, Devin, Kiro, Amp, opencode, Zed, Cline, Factory droid,
   Warp, and the `mcp-remote` bridge for clients without sign-in for remote servers (JetBrains AI Assistant, Augment).
-- Codex plugin marketplace at `.agents/plugins/marketplace.json`.
+- Codex plugin marketplace at `.agents/plugins/marketplace.json`, and the plugin's name, description, links and icon
+  for Codex and ChatGPT in the root `plugin.json`.
 - Devin plugin manifest at `.devin-plugin/plugin.json`, with the server by its URL alone.
-- Antigravity plugin manifest at `.antigravity-plugin/plugin.json`, with its server in `mcp_config.json`.
+- Antigravity plugin manifest at `.antigravity-plugin/plugin.json`, with its server in `mcp_config.json` (sign-in; not
+  tested in Antigravity yet).
 - The README lists the plugin formats in the repository, and its gitranks.com links carry UTM tags.
 
 ## 0.2.1 (2026-11-11)
