@@ -1,0 +1,18 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "gitranks-contribute",
+  "displayName": "GitRanks Contribute",
+  "version": "0.2.2",
+  "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com.",
+  "logo": "assets/icon.png",
+  "suggestedPrompts": [
+    "Find me an open-source issue to work on with GitRanks",
+    "Find a TypeScript bug I could fix today with GitRanks",
+    "Show my GitRanks claims and pull requests, and what each one needs from me"
+  ],
+  "author": { "name": "GitRanks", "url": "https://gitranks.com" },
+  "homepage": "https://gitranks.com/contribute",
+  "repository": "https://github.com/gitranks/contribute",
+  "license": "MIT",
+  "keywords": ["open-source", "contribution", "mcp", "pull-requests", "good-first-issue"]
+}

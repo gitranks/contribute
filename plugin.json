@@ -1,11 +1,31 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gitranks-contribute",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com.",
   "author": { "name": "GitRanks", "url": "https://gitranks.com" },
   "homepage": "https://gitranks.com/contribute",
   "repository": "https://github.com/gitranks/contribute",
   "license": "MIT",
-  "keywords": ["open-source", "contribution", "mcp", "pull-requests", "good-first-issue"]
+  "keywords": ["open-source", "contribution", "mcp", "pull-requests", "good-first-issue"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "GitRanks Contribute",
+        "shortDescription": "Work on open-source issues picked for you",
+        "longDescription": "Your agent works on open-source issues picked for you and hands each change back. You review it and approve the pull request on gitranks.com, and it opens under your name.",
+        "developerName": "GitRanks",
+        "category": "Developer Tools",
+        "websiteURL": "https://gitranks.com/contribute",
+        "privacyPolicyURL": "https://gitranks.com/privacy",
+        "termsOfServiceURL": "https://gitranks.com/terms",
+        "defaultPrompt": [
+          "Find me an open-source issue to work on with GitRanks",
+          "Show my GitRanks claims and pull requests, and what each one needs from me"
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/icon.png"
+      }
+    }
+  }
 }
