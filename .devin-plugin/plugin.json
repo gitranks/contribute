@@ -1,7 +1,7 @@
 {
   "name": "gitranks-contribute",
   "displayName": "GitRanks Contribute",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com",
   "shortDescription": "Open-source issues picked for you",
   "author": { "name": "GitRanks", "url": "https://gitranks.com" },
