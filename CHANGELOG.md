@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- The README has a Codex and a Cursor section: what the agent does, on your own plan, step by step, and a
+  "Fair to maintainers" section with the limits every client shares. The Cursor setup moved out of the old
+  "Cursor, VS Code and Kiro" section, now "VS Code and Kiro".
+
 ## 0.2.2 (2026-11-12)
 
 - One-click install links at the top of the README for claude.ai and Claude Desktop, Cursor, VS Code and Kiro.
