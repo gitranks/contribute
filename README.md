@@ -33,7 +33,8 @@ One click, then confirm in your client and sign in on gitranks.com when it asks:
 - **Kiro:** [![Add to Kiro](https://kiro.dev/images/add-to-kiro.svg)](https://kiro.dev/launch/mcp/add?name=gitranks&config=%7B%22url%22%3A%22https%3A%2F%2Fmcp.gitranks.com%2Fmcp%22%7D)
 
 Each link opens the client's own add-server dialog with the URL filled in; nothing is added until you confirm it there.
-The setup line for every other client is below.
+The setup line for every other client is below. Whichever client you use, the same limits keep it
+[fair to maintainers](#fair-to-maintainers).
 
 ### Claude Code
 
@@ -71,7 +72,8 @@ Without the extension: `gemini mcp add --transport http gitranks https://mcp.git
 ### Codex
 
 Codex can work on open-source issues picked for your skills, and you review every change before a pull request opens
-in your name. The work runs on your ChatGPT plan. GitRanks only hands Codex the issue and takes the patch back.
+in your name. The work runs on your ChatGPT plan. GitRanks picks the issue, briefs Codex on it, checks the patch and
+opens the pull request you approve; it runs no model for you.
 
 1. Add GitRanks:
 
@@ -81,17 +83,16 @@ in your name. The work runs on your ChatGPT plan. GitRanks only hands Codex the 
 
 2. Sign in: `codex mcp login gitranks` opens gitranks.com. Sign in with GitHub and press **Allow**. There's no token to
    copy.
-3. Ask Codex: "Find an open-source issue on GitRanks that fits me, and work on it." Codex calls `find_issues`, then
-   `claim_issue`, which holds the issue for you and returns the repository's rules and how to test; it works on a
-   fresh clone and hands the commits back with `submit_patch`.
+3. Ask Codex: "Find me an open-source issue to work on with GitRanks." Codex calls `find_issues` and lists issues
+   picked for you. For the one you choose it calls `claim_issue`, which holds it for you and returns the repository's
+   rules and how to test. Codex then works on a fresh clone and hands the commits back with `submit_patch`.
 4. Review on gitranks.com: look at the diff, the checks and the pull request text, then approve, send it back with a
-   note, or discard it. The pull request opens from your fork, in your name, and says it was made with AI.
+   note, or discard it. The pull request opens from your fork, in your name, and says it was made with AI. The first
+   time, gitranks.com asks for GitHub access to fork the repository and open the pull request.
 
 Or, instead of steps 1 and 2, the plugin, which adds the skill too: this repository is a Codex plugin marketplace.
 Run `codex plugin marketplace add gitranks/contribute`, then install GitRanks Contribute from `/plugins` in Codex (or
 the Plugins Directory in the ChatGPT desktop app) and sign in on gitranks.com when it asks.
-
-What keeps it fair to maintainers is the same for every client: see [Fair to maintainers](#fair-to-maintainers).
 
 ### Cursor
 
@@ -106,8 +107,8 @@ request opens in your name. The agent runs on your Cursor plan.
 
 2. Cursor offers to sign in when it connects: gitranks.com opens, you sign in with GitHub and press **Allow**. There's
    no token to copy.
-3. In the agent panel, ask: "Find an open-source issue on GitRanks that fits me, and work on it." Then review and
-   approve on gitranks.com.
+3. In the agent panel, ask: "Find me an open-source issue to work on with GitRanks." Pick one from the list, and
+   Cursor's agent claims it, fixes it and hands the change back. Then review and approve on gitranks.com.
 
 ### VS Code and Kiro
 
@@ -224,7 +225,7 @@ token to sign-in, clear the token in your client (or remove the header) and sign
 
 Ask your agent: "Find me an open-source issue to work on with GitRanks." It lists issues picked for you, claims the one
 you choose, fixes it on your machine and hands the change back. Then review it and approve the pull request on
-gitranks.com.
+gitranks.com. Merged pull requests stay on your GitHub profile.
 
 In Claude Code the plugin adds two commands:
 - `/gitranks-contribute:find [language, kind or owner/repo]`: issues picked for you, then work on the one you choose;
@@ -234,9 +235,10 @@ In Claude Code the plugin adds two commands:
 
 GitRanks opens at most one pull request in a repository at a time and never more than four a month. Two misses in one
 repository within 90 days (a pull request no one answers for 30 days, or one closed as wrong, low quality or harshly)
-take it out of the shared pool for 90 days. Maintainers can opt out on the
-[maintainers' page](https://gitranks.com/contribute/maintainers?utm_source=github&utm_campaign=plugin-readme). Merged
-pull requests stay on your GitHub profile.
+take it out of the shared pool for 90 days; a merge cancels its own miss. A maintainer who closes one saying the project
+takes no AI-made pull requests takes the repository out for 90 days; one who asks us to stay away, for 365. Maintainers
+can opt out on the
+[maintainers' page](https://gitranks.com/contribute/maintainers?utm_source=github&utm_campaign=plugin-readme).
 
 ## What is sent to GitRanks
 
