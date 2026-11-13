@@ -1,7 +1,7 @@
 {
   "name": "gitranks-contribute",
   "displayName": "GitRanks Contribute",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com.",
   "author": { "name": "GitRanks", "url": "https://gitranks.com" },
   "homepage": "https://gitranks.com/contribute",
@@ -11,14 +11,5 @@
   "icon": "./assets/icon.png",
   "documentationUrl": "https://github.com/gitranks/contribute#readme",
   "privacyPolicyUrl": "https://gitranks.com/privacy",
-  "termsOfServiceUrl": "https://gitranks.com/terms",
-  "userConfig": {
-    "token": {
-      "type": "string",
-      "title": "GitRanks token (optional)",
-      "description": "Leave it empty: you sign in to gitranks.com in your browser instead. Only for clients without sign-in: a token from gitranks.com → Contribute → Settings → Your own agent (MCP), starting with gr_.",
-      "required": false,
-      "sensitive": true
-    }
-  }
+  "termsOfServiceUrl": "https://gitranks.com/terms"
 }
