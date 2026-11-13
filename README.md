@@ -48,7 +48,7 @@ On Claude Code 2.1.292 or later, one line does both:
 
 Then run `/mcp`, pick `plugin:gitranks-contribute:gitranks`, choose **Authenticate** and sign in on gitranks.com.
 
-Without the plugin: `claude mcp add --transport http gitranks https://mcp.gitranks.com/mcp`, then `/mcp` → `gitranks` →
+Without the plugin: `claude mcp add --scope user --transport http gitranks https://mcp.gitranks.com/mcp`, then `/mcp` → `gitranks` →
 **Authenticate**.
 
 ### Claude Desktop and claude.ai
@@ -178,7 +178,7 @@ optional token.
 - `.agents/plugins/marketplace.json`: the Codex plugin marketplace;
 - `.devin-plugin/plugin.json`: the Devin plugin manifest;
 - `.antigravity-plugin/plugin.json` and `mcp_config.json`: the Antigravity plugin manifest and its server, by sign-in
-  (not tested in Antigravity yet; until it is, set up Antigravity with a token as above).
+  (not tested in Antigravity yet; until it is, set up Antigravity with a token as in [Use a token instead](#use-a-token-instead)).
 
 ## Use a token instead
 
@@ -189,7 +189,7 @@ as `Authorization: Bearer <your token>`. Keep it to yourself: it acts as you unt
 token to sign-in, clear the token in your client (or remove the header) and sign in.
 
 - **Claude Code**, without the plugin (the plugin signs in only):
-  `claude mcp add --transport http gitranks https://mcp.gitranks.com/mcp --header "X-GitRanks-Token: <your GitRanks token>"`.
+  `claude mcp add --scope user --transport http gitranks https://mcp.gitranks.com/mcp --header "X-GitRanks-Token: <your GitRanks token>"`.
 - **Gemini CLI extension:** give the token when it asks, or later with
   `gemini extensions config gitranks-contribute "GitRanks token"`. Gemini CLI keeps it in your system keychain
   (`GITRANKS_MCP_TOKEN`) and sends it in `X-GitRanks-Token`.

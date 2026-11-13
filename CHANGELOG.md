@@ -3,8 +3,10 @@
 ## 0.2.3 (2026-11-13)
 
 - The Claude plugin signs in only: its optional token setting and the `X-GitRanks-Token` header are gone, so the
-  plugin's server connects in claude.ai chat and in Cowork as well as in Claude Code. A token in Claude Code now goes
-  through `claude mcp add --header` (see "Use a token instead").
+  plugin's server now loads in Cowork too (Cowork skips a server whose setting has no default). A token in Claude Code
+  now goes through `claude mcp add --header` (see "Use a token instead").
+- If you set a token in the Claude plugin: after updating, run `/mcp`, pick `plugin:gitranks-contribute:gitranks` and
+  choose **Authenticate** to sign in, or keep the token with the `claude mcp add --header` line in "Use a token instead".
 - The README has a Codex and a Cursor section: what the agent does, on your own plan, step by step, and a
   "Fair to maintainers" section with the limits every client shares. The Cursor setup moved out of the old
   "Cursor, VS Code and Kiro" section, now "VS Code and Kiro".
