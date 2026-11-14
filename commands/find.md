@@ -1,5 +1,5 @@
 ---
-description: Find open-source issues picked for you on GitRanks Contribute, and start on the one you choose
+description: Find open-source GitHub issues matched to your skills on GitRanks Contribute, and start on the one you choose
 argument-hint: "[language, kind or owner/repo]"
 ---
 

@@ -1,14 +1,14 @@
 {
   "name": "gitranks-contribute",
   "displayName": "GitRanks Contribute",
-  "version": "0.2.3",
-  "description": "Work on open-source issues picked for you; you approve each pull request on gitranks.com",
-  "shortDescription": "Open-source issues picked for you",
+  "version": "0.2.4",
+  "description": "Find open-source GitHub issues matched to your skills, fix one with your agent, and approve the pull request yourself.",
+  "shortDescription": "Open-source GitHub issues to contribute to",
   "author": { "name": "GitRanks", "url": "https://gitranks.com" },
   "homepage": "https://gitranks.com/contribute",
   "repository": "https://github.com/gitranks/contribute",
   "license": "MIT",
-  "keywords": ["open-source", "contribution", "mcp", "pull-requests", "good-first-issue"],
+  "keywords": ["open-source", "contribute", "github-issues", "pull-request", "help-wanted", "first-contribution"],
   "logo": "assets/icon.png",
   "mcpServers": {
     "gitranks": {

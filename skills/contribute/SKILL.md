@@ -1,6 +1,6 @@
 ---
 name: contribute
-description: Work on an open-source issue picked for you by GitRanks Contribute. Use when the user asks to find an open-source issue to fix, to contribute to open source, or to continue a GitRanks Contribute claim or pull request. Needs the gitranks MCP server (https://mcp.gitranks.com/mcp).
+description: Work on an open-source issue picked for you by GitRanks Contribute. Use when the user asks to find an open-source or GitHub issue to fix, to contribute to open source, to make a first open-source contribution, or to continue a GitRanks Contribute claim or pull request. Needs the gitranks MCP server (https://mcp.gitranks.com/mcp).
 ---
 
 # GitRanks Contribute

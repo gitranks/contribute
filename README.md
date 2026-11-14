@@ -1,7 +1,8 @@
 # GitRanks Contribute
 
-Your coding agent works on open-source issues picked for you. You review every change and approve the pull request
-on [gitranks.com](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme), and it opens under your
+Find open-source GitHub issues to contribute to, matched to your skills and checked ready for a pull request. Your
+agent fixes one; you review the change and approve the pull request on
+[gitranks.com](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme), and it opens under your
 name.
 Every pull request opened from gitranks.com says it was made with GitRanks Contribute and your agent (with its model
 when the agent reports one), and links where maintainers can tell us something is off or opt out.
