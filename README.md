@@ -164,7 +164,18 @@ Each one connects by the URL alone and signs in on gitranks.com in your browser:
 
 ### Antigravity
 
-Antigravity connects with a token for now: see [Use a token instead](#use-a-token-instead).
+1. Add the server to Antigravity's MCP config, `~/.gemini/config/mcp_config.json`, with the URL alone. In the IDE, open
+   it from the … menu at the top of the agent panel → MCP Servers → Manage MCP Servers → View raw config.
+
+   ```json
+   { "mcpServers": { "gitranks": { "serverUrl": "https://mcp.gitranks.com/mcp" } } }
+   ```
+
+2. In the **agent's window**, click **Customizations**, scroll down to **MCP servers** and click **Sign in** next to
+   `gitranks`. Your browser opens gitranks.com: sign in with GitHub and press **Allow**.
+
+Not the **Authenticate** button on the main window's **Manage MCP servers** page: it only opens Settings →
+Customizations, which has no MCP servers section. Sign in from the agent's window instead.
 
 ### Plugin formats in this repository
 
@@ -178,7 +189,7 @@ the server for each plugin format below. Each connects by signing in.
 - `.agents/plugins/marketplace.json`: the Codex plugin marketplace;
 - `.devin-plugin/plugin.json`: the Devin plugin manifest;
 - `.antigravity-plugin/plugin.json` and `mcp_config.json`: the Antigravity plugin manifest and its server, by sign-in
-  (not tested in Antigravity yet; until it is, set up Antigravity with a token as in [Use a token instead](#use-a-token-instead)).
+  (sign in from the agent's window, as in [Antigravity](#antigravity), step 2).
 
 ## Use a token instead
 
@@ -216,8 +227,8 @@ plain text in your client's config file: keep that file to yourself.
   { "mcpServers": { "gitranks": { "serverUrl": "https://mcp.gitranks.com/mcp", "headers": { "Authorization": "Bearer <your GitRanks token>" } } } }
   ```
 
-  Then refresh its MCP servers: in the app, the refresh button under Settings → Customizations → Installed MCP
-  Servers; in the CLI, `/mcp`.
+  Then restart it: in the agent's window, **Customizations** → **MCP servers**, ⋮ next to `gitranks` → **Restart**; in
+  the CLI, `/mcp`.
 
 ## Use it
 
