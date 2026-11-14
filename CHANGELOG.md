@@ -3,7 +3,7 @@
 ## Unreleased
 
 - The server has a prompt, **Find an open-source issue for me** (`find_issue`): clients that list prompts show it as a
-  command, so you can start without typing the request. "Use it" says so.
+  command or menu item, so you can start without typing the request. "Use it" says so.
 - The README opens with a short clip of the Claude Code setup: install the plugin, sign in once, ask for an issue.
 
 ## 0.2.6 (2026-11-14)
