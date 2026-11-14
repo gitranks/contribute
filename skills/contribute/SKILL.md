@@ -56,9 +56,10 @@ invited accounts only; anyone else gets `learn_closed`.
    blocks: text, diagrams, diffs, code), the question rules and an example. Follow it.
 2. **Fix in one commit.** Squash your work into one commit (`git reset --soft origin/<baseBranch> && git commit`) and
    call `submit_patch` with `verdict: "done"`. When the checks pass, the claim stays open: the lesson is needed.
-3. **Hand back the lesson.** Call `submit_lesson` with the `attemptId` and the `lesson` the brief describes. Our checks
-   and a short review run at once. A failure comes back with findings, one per line: fix the lesson and call it again.
-   A `try_later` answer means the review cannot run now: call again when it says.
+3. **Hand back the lesson.** Call `submit_lesson` with the `attemptId` and the `lesson` the brief describes. The checks
+   and a short review run at once. A failure answers `lesson_failed` with its `findings` and `callsLeft`: fix each
+   finding and call it again. The fifth failed call for one patch ends the claim. A `try_later` answer means the review
+   cannot run now: call again after its `retryAfterSec`.
 4. **A new patch needs a new lesson.** After a changed `submit_patch`, call `submit_lesson` again. When the user sends
    the work back asking only for a better lesson, call `submit_lesson` again without a new patch.
 5. **Tell the user** to take the lesson and approve the pull request on gitranks.com. The answer has the link.
