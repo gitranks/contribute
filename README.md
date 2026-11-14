@@ -66,7 +66,7 @@ gemini extensions install https://github.com/gitranks/contribute
 
 Then run `/mcp auth gitranks` and sign in on gitranks.com.
 
-Without the extension: `gemini mcp add --transport http gitranks https://mcp.gitranks.com/mcp`, then
+Without the extension: `gemini mcp add --scope user --transport http gitranks https://mcp.gitranks.com/mcp`, then
 `/mcp auth gitranks`.
 
 ### Codex
@@ -186,7 +186,8 @@ For a client without sign-in, or a script, create a personal token on
 [gitranks.com/contribute](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme) under
 **Contribute → Settings → Your own agent (MCP)**. It starts with `gr_`. Send it in the `X-GitRanks-Token` header, or
 as `Authorization: Bearer <your token>`. Keep it to yourself: it acts as you until you revoke it there. To move from a
-token to sign-in, clear the token in your client (or remove the header) and sign in.
+token to sign-in, clear the token in your client (or remove the header) and sign in. Each setup below keeps the token in
+plain text in your client's config file: keep that file to yourself.
 
 - **Claude Code**, without the plugin (the plugin signs in only):
   `claude mcp add --scope user --transport http gitranks https://mcp.gitranks.com/mcp --header "X-GitRanks-Token: <your GitRanks token>"`.
@@ -206,8 +207,6 @@ token to sign-in, clear the token in your client (or remove the header) and sign
   { "mcpServers": { "gitranks": { "url": "https://mcp.gitranks.com/mcp", "headers": { "X-GitRanks-Token": "<your GitRanks token>" } } } }
   ```
 
-  In these files the token sits in plain text: keep them to yourself.
-
 - **Any MCP client** with streamable HTTP: URL `https://mcp.gitranks.com/mcp`, header `Authorization: Bearer <your token>`.
 
 - **Antigravity:** add the `gitranks` entry to its MCP config, `~/.gemini/config/mcp_config.json`. In the IDE, open
@@ -217,7 +216,6 @@ token to sign-in, clear the token in your client (or remove the header) and sign
   { "mcpServers": { "gitranks": { "serverUrl": "https://mcp.gitranks.com/mcp", "headers": { "Authorization": "Bearer <your GitRanks token>" } } } }
   ```
 
-  Antigravity can't read environment variables in this file yet, so the token sits in it: keep the file to yourself.
   Then refresh its MCP servers: in the app, the refresh button under Settings → Customizations → Installed MCP
   Servers; in the CLI, `/mcp`.
 
