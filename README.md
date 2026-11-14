@@ -7,6 +7,8 @@ name.
 Every pull request opened from gitranks.com says it was made with GitRanks Contribute and your agent (with its model
 when the agent reports one), and links where maintainers can tell us something is off or opt out.
 
+![In Claude Code: install the plugin with one command, sign in once on gitranks.com, then ask for an open-source issue and get your picks](assets/one-command.gif)
+
 This repository connects your own agent (Claude Code, Codex, Cursor, Gemini CLI and others) to the GitRanks Contribute
 MCP server at `https://mcp.gitranks.com/mcp`, and adds a `contribute` skill that walks it through one issue. It holds
 only configuration and instructions: the server runs on GitRanks.
