@@ -244,6 +244,10 @@ In Claude Code the plugin adds two commands:
 - `/gitranks-contribute:find [language, kind or owner/repo]`: issues picked for you, then work on the one you choose;
 - `/gitranks-contribute:status`: your claims and pull requests, and what each one needs from you.
 
+The server also offers one prompt, **Find an open-source issue for me**, with an optional wish such as a language or a
+repository. Clients that list server prompts show it as a command or menu item; in Claude Code it is an `/mcp__…find_issue`
+command.
+
 ## Fair to maintainers
 
 GitRanks opens at most one pull request in a repository at a time and never more than four a month. Two misses in one
