@@ -1,19 +1,10 @@
 {
   "name": "gitranks-contribute",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Find open-source GitHub issues matched to your skills, fix one with your agent, and approve the pull request yourself.",
   "mcpServers": {
     "gitranks": {
-      "httpUrl": "https://mcp.gitranks.com/mcp",
-      "headers": { "X-GitRanks-Token": "${GITRANKS_MCP_TOKEN:-}" }
+      "httpUrl": "https://mcp.gitranks.com/mcp"
     }
-  },
-  "settings": [
-    {
-      "name": "GitRanks token",
-      "description": "Optional: leave it empty and sign in to gitranks.com in your browser with /mcp auth gitranks. Only for clients without sign-in: a token from gitranks.com → Contribute → Settings → Your own agent (MCP), starting with gr_.",
-      "envVar": "GITRANKS_MCP_TOKEN",
-      "sensitive": true
-    }
-  ]
+  }
 }

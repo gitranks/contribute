@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.5 (2026-11-14)
+
+- The Gemini CLI extension signs in only, like the Claude plugin: its optional token setting and the
+  `X-GitRanks-Token` header are gone. If you set a token there, run `/mcp auth gitranks` after updating, or add the
+  server with a token as in "Use a token instead".
+- "Use a token instead" no longer reads the token from an environment variable: the Codex, Cursor and Gemini CLI
+  examples take the token itself.
+
 ## 0.2.4 (2026-11-14)
 
 - New description in every manifest and at the top of the README: "Find open-source GitHub issues matched to your

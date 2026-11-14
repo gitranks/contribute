@@ -64,9 +64,9 @@ above, or by hand: **Customize → Connectors → Add → Add custom connector**
 gemini extensions install https://github.com/gitranks/contribute
 ```
 
-Gemini CLI asks for an optional token: leave it empty. Then run `/mcp auth gitranks` and sign in on gitranks.com.
+Then run `/mcp auth gitranks` and sign in on gitranks.com.
 
-Without the extension: `gemini mcp add --transport http gitranks https://mcp.gitranks.com/mcp`, then
+Without the extension: `gemini mcp add --scope user --transport http gitranks https://mcp.gitranks.com/mcp`, then
 `/mcp auth gitranks`.
 
 ### Codex
@@ -169,8 +169,7 @@ Antigravity connects with a token for now: see [Use a token instead](#use-a-toke
 ### Plugin formats in this repository
 
 The skill in `skills/contribute/SKILL.md` works in any agent that reads Agent Skills. The repository packages it with
-the server for each plugin format below. Each connects by signing in; only the Gemini CLI extension also takes the
-optional token.
+the server for each plugin format below. Each connects by signing in.
 
 - `.claude-plugin/` and `.mcp.json`: the Claude Code plugin and its marketplace (`gitranks`);
 - `gemini-extension.json`: the Gemini CLI extension;
@@ -187,25 +186,25 @@ For a client without sign-in, or a script, create a personal token on
 [gitranks.com/contribute](https://gitranks.com/contribute?utm_source=github&utm_campaign=plugin-readme) under
 **Contribute → Settings → Your own agent (MCP)**. It starts with `gr_`. Send it in the `X-GitRanks-Token` header, or
 as `Authorization: Bearer <your token>`. Keep it to yourself: it acts as you until you revoke it there. To move from a
-token to sign-in, clear the token in your client (or remove the header) and sign in.
+token to sign-in, clear the token in your client (or remove the header) and sign in. Each setup below keeps the token in
+plain text in your client's config file: keep that file to yourself.
 
 - **Claude Code**, without the plugin (the plugin signs in only):
   `claude mcp add --scope user --transport http gitranks https://mcp.gitranks.com/mcp --header "X-GitRanks-Token: <your GitRanks token>"`.
-- **Gemini CLI extension:** give the token when it asks, or later with
-  `gemini extensions config gitranks-contribute "GitRanks token"`. Gemini CLI keeps it in your system keychain
-  (`GITRANKS_MCP_TOKEN`) and sends it in `X-GitRanks-Token`.
-- **Codex** (`~/.codex/config.toml`), with the token in your environment as `GITRANKS_MCP_TOKEN`:
+- **Gemini CLI**, without the extension (the extension signs in only):
+  `gemini mcp add --scope user --transport http --header "X-GitRanks-Token: <your GitRanks token>" gitranks https://mcp.gitranks.com/mcp`.
+- **Codex** (`~/.codex/config.toml`):
 
   ```toml
   [mcp_servers.gitranks]
   url = "https://mcp.gitranks.com/mcp"
-  bearer_token_env_var = "GITRANKS_MCP_TOKEN"
+  http_headers = { "X-GitRanks-Token" = "<your GitRanks token>" }
   ```
 
-- **Cursor** (`~/.cursor/mcp.json`), with the token in your environment as `GITRANKS_MCP_TOKEN`:
+- **Cursor** (`~/.cursor/mcp.json`):
 
   ```json
-  { "mcpServers": { "gitranks": { "url": "https://mcp.gitranks.com/mcp", "headers": { "Authorization": "Bearer ${env:GITRANKS_MCP_TOKEN}" } } } }
+  { "mcpServers": { "gitranks": { "url": "https://mcp.gitranks.com/mcp", "headers": { "X-GitRanks-Token": "<your GitRanks token>" } } } }
   ```
 
 - **Any MCP client** with streamable HTTP: URL `https://mcp.gitranks.com/mcp`, header `Authorization: Bearer <your token>`.
@@ -217,7 +216,6 @@ token to sign-in, clear the token in your client (or remove the header) and sign
   { "mcpServers": { "gitranks": { "serverUrl": "https://mcp.gitranks.com/mcp", "headers": { "Authorization": "Bearer <your GitRanks token>" } } } }
   ```
 
-  Antigravity can't read environment variables in this file yet, so the token sits in it: keep the file to yourself.
   Then refresh its MCP servers: in the app, the refresh button under Settings → Customizations → Installed MCP
   Servers; in the CLI, `/mcp`.
 
