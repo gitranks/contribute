@@ -245,8 +245,8 @@ In Claude Code the plugin adds two commands:
 - `/gitranks-contribute:status`: your claims and pull requests, and what each one needs from you.
 
 The server also offers one prompt, **Find an open-source issue for me**, with an optional one-word wish such as
-`typescript`, `docs` or `owner/name`. Clients that list server prompts show it as a command or menu item; in Claude Code it is an `/mcp__…find_issue`
-command.
+`typescript`, `docs` or `owner/name`. Clients that list server prompts show it as a command or menu item; in Claude
+Code it is an `/mcp__…find_issue` command.
 
 ## Fair to maintainers
 
