@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- The README opens with a short clip of the Claude Code setup: install the plugin, sign in once, ask for an issue.
+
 ## 0.2.6 (2026-11-14)
 
 - Antigravity signs in like the other clients: add the server with the URL alone, then, in the agent's window, click
