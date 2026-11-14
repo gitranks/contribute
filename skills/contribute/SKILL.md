@@ -45,6 +45,24 @@ Other tools:
 - `start_follow_up` works on a reviewer's feedback on an open pull request.
 - `report_readiness` saves how a repository builds and tests, for the next brief.
 
+## GitRanks Learn (invite-only)
+
+In GitRanks Learn you still write all the code, and you also write a short lesson on your fix. The user takes the
+lesson on gitranks.com, answering one question a step, and only then can approve the pull request. Learn is open to
+invited accounts only; anyone else gets `learn_closed`.
+
+1. **Find and claim in Learn mode.** Pass `mode: "learn"` to `find_issues` (issues that fit the user's Learn goal) and
+   to `claim_issue`. The claim's answer adds `lessonBrief`: who the lesson is for, its shape (4 to 6 steps of typed
+   blocks: text, diagrams, diffs, code), the question rules and an example. Follow it.
+2. **Fix in one commit.** Squash your work into one commit (`git reset --soft origin/<baseBranch> && git commit`) and
+   call `submit_patch` with `verdict: "done"`. When the checks pass, the claim stays open: the lesson is needed.
+3. **Hand back the lesson.** Call `submit_lesson` with the `attemptId` and the `lesson` the brief describes. Our checks
+   and a short review run at once. A failure comes back with findings, one per line: fix the lesson and call it again.
+   A `try_later` answer means the review cannot run now: call again when it says.
+4. **A new patch needs a new lesson.** After a changed `submit_patch`, call `submit_lesson` again. When the user sends
+   the work back asking only for a better lesson, call `submit_lesson` again without a new patch.
+5. **Tell the user** to take the lesson and approve the pull request on gitranks.com. The answer has the link.
+
 ## Rules
 
 - Never push and never open a pull request yourself.
