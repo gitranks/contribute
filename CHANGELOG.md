@@ -4,8 +4,7 @@
 
 - Antigravity signs in like the other clients: add the server with the URL alone, then, in the agent's window, click
   **Customizations**, scroll down to **MCP servers** and click **Sign in** next to `gitranks`. The **Authenticate**
-  button on the main window's **Manage MCP servers** page doesn't sign in. A token still works, as in "Use a token
-  instead".
+  button on the **Manage MCP Servers** page doesn't sign in. A token still works, as in "Use a token instead".
 - The Antigravity token setup restarts the server from the agent window's **Customizations**, not from Settings.
 
 ## 0.2.5 (2026-11-14)

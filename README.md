@@ -174,8 +174,10 @@ Each one connects by the URL alone and signs in on gitranks.com in your browser:
 2. In the **agent's window**, click **Customizations**, scroll down to **MCP servers** and click **Sign in** next to
    `gitranks`. Your browser opens gitranks.com: sign in with GitHub and press **Allow**.
 
-Not the **Authenticate** button on the main window's **Manage MCP servers** page: it only opens Settings →
-Customizations, which has no MCP servers section. Sign in from the agent's window instead.
+Don't use the **Authenticate** button on the **Manage MCP Servers** page: it only opens Settings → Customizations,
+which has no MCP servers section. Sign in from the agent's window instead.
+
+A token works too: see [Use a token instead](#use-a-token-instead).
 
 ### Plugin formats in this repository
 
@@ -189,7 +191,7 @@ the server for each plugin format below. Each connects by signing in.
 - `.agents/plugins/marketplace.json`: the Codex plugin marketplace;
 - `.devin-plugin/plugin.json`: the Devin plugin manifest;
 - `.antigravity-plugin/plugin.json` and `mcp_config.json`: the Antigravity plugin manifest and its server, by sign-in
-  (sign in from the agent's window, as in [Antigravity](#antigravity), step 2).
+  (installing the plugin is not tested in Antigravity yet; the setup in [Antigravity](#antigravity) is).
 
 ## Use a token instead
 
