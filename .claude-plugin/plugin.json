@@ -7,7 +7,7 @@
   "homepage": "https://gitranks.com/contribute",
   "repository": "https://github.com/gitranks/contribute",
   "license": "MIT",
-  "keywords": ["open-source", "contribute", "github-issues", "pull-request", "good-first-issue", "first-contribution"],
+  "keywords": ["open-source", "contribute", "github-issues", "pull-request", "help-wanted", "first-contribution"],
   "icon": "./assets/icon.png",
   "documentationUrl": "https://github.com/gitranks/contribute#readme",
   "privacyPolicyUrl": "https://gitranks.com/privacy",

@@ -1,14 +1,12 @@
 # Changelog
 
-## Unreleased
-
-- The skill has GitRanks Learn's steps (invite-only): `find_issues` and `claim_issue` with `mode: "learn"`, one commit
-  for `submit_patch`, then `submit_lesson` with the lesson on the fix. "What is sent to GitRanks" names the lesson.
-
 ## 0.2.4 (2026-11-14)
 
 - New description in every manifest and at the top of the README: "Find open-source GitHub issues matched to your
-  skills", with `contribute`, `github-issues`, `pull-request` and `first-contribution` among the keywords.
+  skills", with `contribute`, `github-issues`, `pull-request`, `help-wanted` and `first-contribution` as keywords. The
+  skill's trigger and the `/gitranks-contribute:find` description name GitHub issues too.
+- The skill has GitRanks Learn's steps (invite-only): `find_issues` and `claim_issue` with `mode: "learn"`, one commit
+  for `submit_patch`, then `submit_lesson` with the lesson on the fix. "What is sent to GitRanks" names the lesson.
 
 ## 0.2.3 (2026-11-13)
 
