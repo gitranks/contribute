@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- The README has a Support section: email, issues and the FAQ.
+
 ## 0.3.0 (2026-11-15)
 
 - Ready for the plugin directory shared by ChatGPT and Codex: the root `plugin.json` has the listing (a 30-character
