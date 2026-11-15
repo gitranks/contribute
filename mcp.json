@@ -3,7 +3,17 @@
   "mcpServers": {
     "gitranks": {
       "type": "streamable-http",
-      "url": "https://mcp.gitranks.com/mcp"
+      "url": "https://mcp.gitranks.com/mcp",
+      "extensions": {
+        "com.openai": {
+          "auth": {
+            "type": "oauth",
+            "client": {
+              "mode": "dcr"
+            }
+          }
+        }
+      }
     }
   }
 }

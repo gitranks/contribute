@@ -60,6 +60,16 @@ Use the [Add to Claude link](https://claude.ai/customize/connectors?modal=add-cu
 above, or by hand: **Customize → Connectors → Add → Add custom connector**, name `GitRanks Contribute`, URL
 `https://mcp.gitranks.com/mcp`. Then **Connect** it and sign in on gitranks.com.
 
+### ChatGPT
+
+On [chatgpt.com/plugins](https://chatgpt.com/plugins), press **+** and choose **Add custom MCP server**. Name it
+`GitRanks Contribute`, paste `https://mcp.gitranks.com/mcp` and set authentication to **OAuth**. Confirm the warning
+with **I understand and want to continue**, press **Create as a plugin**, then install it. ChatGPT asks you to sign in:
+your browser opens GitRanks, where you allow it. Then start a new chat and pick it with **@**.
+
+In ChatGPT, on the web, desktop or your phone, you can find, claim and track issues. The fix needs Codex or another
+agent that can run a shell, signed in to the same account: it picks up your claim.
+
 ### Gemini CLI
 
 ```bash
@@ -189,7 +199,8 @@ the server for each plugin format below. Each connects by signing in.
 - `.claude-plugin/` and `.mcp.json`: the Claude Code plugin and its marketplace (`gitranks`);
 - `gemini-extension.json`: the Gemini CLI extension;
 - `plugin.json` and `mcp.json` at the root: an [Agent Plugins](https://github.com/agentplugins/agent-plugins-spec)
-  package, for clients and marketplaces that install that format;
+  package, for clients and marketplaces that install that format, with the listing and review details for the ChatGPT
+  and Codex plugin directory;
 - `.agents/plugins/marketplace.json`: the Codex plugin marketplace;
 - `.devin-plugin/plugin.json`: the Devin plugin manifest;
 - `.antigravity-plugin/plugin.json` and `mcp_config.json`: the Antigravity plugin manifest and its server, by sign-in

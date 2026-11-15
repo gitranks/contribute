@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.3.0 (2026-11-15)
+
+- Ready for the plugin directory shared by ChatGPT and Codex: the root `plugin.json` has the listing (a 30-character
+  subtitle, a longer description that says the fix needs an agent with a shell, capabilities, a support page and three
+  starter prompts), the review's test cases and demo video, and the release notes. `mcp.json` says the server signs in
+  with OAuth and registers its client itself.
+- The README has ChatGPT's setup: add a custom MCP server with the URL and OAuth, then sign in on gitranks.com. In
+  ChatGPT you find, claim and track issues; the fix needs Codex or another agent with a shell.
+- The skill says what to do without a shell: find, claim and track, and say the fix needs an agent with a shell (or
+  give the issue back). For signing in again it names apps such as ChatGPT too.
 - The server has a prompt, **Find an open-source issue for me** (`find_issue`): clients that list prompts show it as a
   command or menu item, so you can start without typing the request. "Use it" says so.
 - The README opens with a short clip of the Claude Code setup: install the plugin, sign in once, ask for an issue.
