@@ -40,6 +40,10 @@ https://github.com/gitranks/contribute#use-a-token-instead.
    If they fail, fix the patch and submit again.
 6. **Tell the user** to review and approve the pull request on gitranks.com. The answer to `submit_patch` has the link.
 
+If you can't run a shell here (for example a chat app on the web or on a phone), you can still find, claim and track
+issues. Say that the fix needs an agent with a shell, such as Codex or Claude Code, signed in to the same GitRanks
+account, which can pick up the claim; or offer to give it back with `release_issue`.
+
 Other tools:
 - `my_contributions` lists the user's claims and pull requests.
 - `start_follow_up` works on a reviewer's feedback on an open pull request.
