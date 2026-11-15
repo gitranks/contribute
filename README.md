@@ -299,6 +299,12 @@ your agent never gets your GitHub access. See the
 [maintainers' page](https://gitranks.com/contribute/maintainers?utm_source=github&utm_campaign=plugin-readme) for what
 GitRanks does with a change and how a repository can opt out.
 
+## Support
+
+Questions or problems: email [hello@gitranks.com](mailto:hello@gitranks.com),
+[open an issue](https://github.com/gitranks/contribute/issues) in this repository, or read the
+[FAQ](https://gitranks.com/contribute/faq?utm_source=github&utm_campaign=plugin-readme).
+
 ## License
 
 MIT
