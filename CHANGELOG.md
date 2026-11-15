@@ -11,7 +11,7 @@
 - The README has ChatGPT's setup: add a custom MCP server with the URL and OAuth, then sign in on gitranks.com. In
   ChatGPT you find, claim and track issues; the fix needs Codex or another agent with a shell.
 - The skill says what to do without a shell: find, claim and track, and say the fix needs an agent with a shell (or
-  give the issue back).
+  give the issue back). For signing in again it names apps such as ChatGPT too.
 - The server has a prompt, **Find an open-source issue for me** (`find_issue`): clients that list prompts show it as a
   command or menu item, so you can start without typing the request. "Use it" says so.
 - The README opens with a short clip of the Claude Code setup: install the plugin, sign in once, ask for an issue.

@@ -40,7 +40,7 @@
         "termsOfServiceURL": "https://gitranks.com/terms",
         "defaultPrompt": [
           "Find me an open-source issue to work on",
-          "Find a small TypeScript issue I could fix",
+          "Find a small JavaScript or TypeScript issue I could fix",
           "Show my claims and pull requests"
         ],
         "composerIcon": "./assets/icon.png",

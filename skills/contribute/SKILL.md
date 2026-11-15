@@ -16,7 +16,8 @@ gitranks.com, where they sign in with GitHub and press Allow. If the server is a
 call answers that sign-in is required, ask the user to start their client's sign-in for it:
 - Claude Code: `/mcp`, pick `plugin:gitranks-contribute:gitranks` (or `gitranks` if added by hand), then Authenticate;
 - Gemini CLI: `/mcp auth gitranks`;
-- Codex: `codex mcp login gitranks`.
+- Codex: `codex mcp login gitranks`;
+- ChatGPT or another app: connect GitRanks Contribute again from the app's settings.
 
 Never ask them to paste anything from that page. A personal token is only for clients that can't sign in: see
 https://github.com/gitranks/contribute#use-a-token-instead.
