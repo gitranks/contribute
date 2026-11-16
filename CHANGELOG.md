@@ -2,7 +2,12 @@
 
 ## Unreleased
 
+## 0.3.1 (2026-11-16)
+
 - The README has a Support section: email, issues and the FAQ.
+- A security policy (`SECURITY.md`): report issues privately by email.
+- The Devin manifest follows the Devin marketplace's style: a short description of 40 characters or fewer, and no
+  period at the end of the description.
 
 ## 0.3.0 (2026-11-15)
 
