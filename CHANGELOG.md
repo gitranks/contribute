@@ -2,8 +2,10 @@
 
 ## Unreleased
 
-- The skill says how to report whose each failing check is on a follow-up: `checks` on `submit_patch` or
-  `release_issue`.
+## 0.3.2 (2026-11-17)
+
+- On a follow-up, the skill says to fix only the failing checks the pull request's change causes, and to report
+  whose each failing check is: `checks` on `submit_patch` or `release_issue`.
 
 ## 0.3.1 (2026-11-16)
 
