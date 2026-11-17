@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- The skill says how to report whose each failing check is on a follow-up: `checks` on `submit_patch` or
+  `release_issue`.
+
 ## 0.3.1 (2026-11-16)
 
 - The README has a Support section: email, issues and the FAQ.
