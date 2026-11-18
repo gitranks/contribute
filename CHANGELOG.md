@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- After each step the skill tells the user what happened and what comes next: what was claimed and until when, why a
+  claim or an issue was given back, and the review link after `submit_patch` (unless autopilot is on, nothing reaches GitHub
+  before the user approves). It also covers an empty list, a refused claim and a send-back, and ends with where to get help.
+- `/gitranks-contribute:find` and `/gitranks-contribute:status` say what to do when nothing comes back.
+- The README says what to ask your agent once signed in, what happens at the approval, and links the MCP docs; the
+  Claude Desktop and claude.ai section says the fix needs an agent with a shell.
+
 ## 0.3.2 (2026-11-17)
 
 - On a follow-up, the skill says to fix only the failing checks the pull request's change causes, and to report
