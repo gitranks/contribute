@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.3.3 (2026-11-18)
+
 - After each step the skill tells the user what happened and what comes next: what was claimed and until when, why a
   claim or an issue was given back, and the review link after `submit_patch` (unless autopilot is on, nothing reaches GitHub
   before the user approves). It also covers an empty list, a refused claim and a send-back, and ends with where to get help.
