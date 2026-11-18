@@ -28,8 +28,8 @@ A client that can't sign in can still use a personal token: see [Use a token ins
 
 **Then ask your agent:** "Find me an open-source issue to work on with GitRanks." It shows you a few issues and you
 choose one. When it hands the change back, it gives you a link: review the change there and approve the pull request.
-Nothing reaches GitHub before you approve it; the first time, gitranks.com asks for GitHub access to fork the repository
-and open the pull request in your name. Setup for every client, troubleshooting and help:
+Unless you turn autopilot on, nothing reaches GitHub before you approve it; the first time, gitranks.com asks for GitHub
+access to fork the repository and open the pull request in your name. Setup for every client, troubleshooting and help:
 [the MCP docs](https://gitranks.com/contribute/mcp?utm_source=github&utm_campaign=plugin-readme).
 
 ## Install
@@ -311,7 +311,8 @@ GitRanks does with a change and how a repository can opt out.
 ## Support
 
 Setup for every client and troubleshooting:
-[the MCP docs](https://gitranks.com/contribute/mcp?utm_source=github&utm_campaign=plugin-readme). Questions or problems: email [hello@gitranks.com](mailto:hello@gitranks.com),
+[the MCP docs](https://gitranks.com/contribute/mcp?utm_source=github&utm_campaign=plugin-readme).
+Questions or problems: email [hello@gitranks.com](mailto:hello@gitranks.com),
 [open an issue](https://github.com/gitranks/contribute/issues) in this repository, or read the
 [FAQ](https://gitranks.com/contribute/faq?utm_source=github&utm_campaign=plugin-readme).
 
