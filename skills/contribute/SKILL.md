@@ -77,11 +77,13 @@ Other tools:
   next) null when a `why` already says all that is left for the user.
 - `report_readiness` saves how a repository builds and tests, for the next brief.
 
-## GitRanks Learn (invite-only)
+## GitRanks Learn
 
 In GitRanks Learn you still write all the code, and you also write a short lesson on your fix. The user takes the
-lesson on gitranks.com, answering one question a step, and only then can approve the pull request. Learn is open to
-invited accounts only; anyone else gets `learn_closed`.
+lesson on gitranks.com, answering one question a step, and only then can approve the pull request. Use Learn mode when
+the user asks to learn from the fix, to be taught or quizzed on it, or names their Learn goal; otherwise work as above.
+If the server answers `learn_closed`, Learn is not open to this account yet: tell the user, and offer to go on without
+`mode` (the usual flow).
 
 1. **Find and claim in Learn mode.** Pass `mode: "learn"` to `find_issues` (issues that fit the user's Learn goal) and
    to `claim_issue`. The claim's answer adds `lessonBrief`: who the lesson is for, its shape (4 to 6 steps of typed
