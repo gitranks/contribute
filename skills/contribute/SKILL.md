@@ -30,7 +30,7 @@ https://github.com/gitranks/contribute#use-a-token-instead.
 1. **Find.** Call `find_issues`. Pass the user's wishes as filters (`languages`, `kinds`, `maxSize`, `repo`, `topics`). Show the
    user a few candidates and let them pick, unless they already named one. If nothing matches your filters, offer
    fewer. With none and nothing back, say a new account's first picks take a minute or two and new ones come every
-   day; if the user picked languages or kinds, they can widen them at https://gitranks.com/contribute/settings/work.
+   day; if the user picked languages or kinds, they can widen them at https://gitranks.com/contribute/settings#work.
    If none on the page can be claimed now, `notClaimableBecause` says why: ask for the next page with `after`.
 2. **Claim.** Call `claim_issue` with the issue's `issueId` or its GitHub URL. The answer is the brief: the clone URL,
    the base branch, how the repository builds and tests, and its contribution rules. Tell the user which issue you

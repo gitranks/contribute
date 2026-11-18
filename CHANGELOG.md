@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 0.3.4 (2026-11-18)
+
+- The skill links the language filters where they are, on the settings page.
+
 ## 0.3.3 (2026-11-18)
 
 - After each step the skill tells the user what happened and what comes next: what was claimed and until when, why a
