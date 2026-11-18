@@ -2,8 +2,12 @@
 
 ## Unreleased
 
+## 0.3.5 (2026-11-18)
+
 - GitRanks Learn: the skill no longer calls Learn invite-only, says when to use Learn mode and what to tell the user
   on `learn_closed`.
+- GitRanks Learn: when the user asks to fix an issue URL "with GitRanks Learn" (the prompt gitranks.com gives for the
+  issue they picked), the skill claims that URL in Learn mode and follows the Learn steps.
 
 ## 0.3.4 (2026-11-18)
 

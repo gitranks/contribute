@@ -82,7 +82,9 @@ Other tools:
 In GitRanks Learn you still write all the code, and you also write a short lesson on your fix. The user takes the
 lesson on gitranks.com, answering one question a step, and only then can approve the pull request. Use Learn mode when
 the user asks to learn from the fix, to be taught or quizzed on it, or names something they want to learn (their Learn
-goal); otherwise work as above. If the server answers `learn_closed`, Learn is not open to this account yet: tell the
+goal); otherwise work as above. When the user asks you to fix an issue URL "with GitRanks Learn" (the prompt
+gitranks.com gives them for the issue they picked), call `claim_issue` with that `url` and `mode: "learn"`, then
+follow the steps below. If the server answers `learn_closed`, Learn is not open to this account yet: tell the
 user, and offer to go on without `mode` (the usual flow); after a Learn claim, offer `release_issue` instead.
 
 1. **Find and claim in Learn mode.** Pass `mode: "learn"` to `find_issues` (issues that fit the user's Learn goal) and
