@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- GitRanks Learn: the skill no longer calls Learn invite-only, says when to use Learn mode, and what to tell the user
+- GitRanks Learn: the skill no longer calls Learn invite-only, says when to use Learn mode and what to tell the user
   on `learn_closed`.
 
 ## 0.3.4 (2026-11-18)
