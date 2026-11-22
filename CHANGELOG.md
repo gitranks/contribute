@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 0.3.6 (2026-11-22)
+
+- The skill's rules start with the GitRanks rule for issues from the user's list, word for word as the server's
+  instructions give it: only GitRanks opens the pull request, so the agent never pushes a branch, forks the repository
+  or opens the pull request itself (for example with `gh pr create`), and sends the patch with `submit_patch`. If the
+  user asks it to open the pull request itself, it says the rules do not allow that and offers `release_issue`. The
+  list belongs to GitRanks: the agent does not save, export or pass it on. A pull request opened outside GitRanks
+  brings a message first, then a shorter list, then a blocked account.
+
 ## 0.3.5 (2026-11-18)
 
 - GitRanks Learn: the skill no longer calls Learn invite-only, says when to use Learn mode and what to tell the user
