@@ -3,6 +3,7 @@
 ## Unreleased
 
 - The README no longer calls GitRanks Contribute a beta.
+- GitRanks Learn: open to everyone, so the skill no longer says what to do when Learn is not open to the user.
 
 ## 0.4.1 (2026-11-24)
 
