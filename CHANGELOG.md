@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.4.3 (2026-11-24)
+
 - GitRanks Learn: the skill says a lesson has 3 to 5 steps, as the lesson's brief now asks.
 
 ## 0.4.2 (2026-11-24)
