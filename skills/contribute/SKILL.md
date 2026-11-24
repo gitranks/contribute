@@ -101,7 +101,7 @@ gitranks.com gives them for the issue they picked), call `claim_issue` with that
 1. **Find and claim in Learn mode.** Pass `mode: "learn"` to `find_issues` (issues that fit the user's Learn goal,
    masked as above; each item also gives `lesson`, the course lesson the issue teaches or null, and `lessonWhy`:
    `uses_learned`, `teaches_new` or `no_lesson`) and to `claim_issue`, with the item's `masked.id` as `maskId`. The
-   claim's answer adds `lesson` and `lessonBrief`: who the lesson is for, its shape (4 to 6 steps of typed blocks: text,
+   claim's answer adds `lesson` and `lessonBrief`: who the lesson is for, its shape (3 to 5 steps of typed blocks: text,
    diagrams, diffs, code), the question rules and an example. Follow it.
 2. **Fix in one commit.** Squash your work into one commit (`git reset --soft origin/<baseBranch> && git commit`) and
    call `submit_patch` with `verdict: "done"`. When the checks pass, the claim stays open: the lesson is needed.
