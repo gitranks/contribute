@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- GitRanks Learn: Learn mode lists the issues the user's Learn Issues page shows For you, from their Learn languages
+  and level; the skill no longer speaks of a Learn goal.
+
 ## 0.4.3 (2026-11-24)
 
 - GitRanks Learn: the skill says a lesson has 3 to 5 steps, as the lesson's brief now asks.
