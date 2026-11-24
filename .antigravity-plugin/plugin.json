@@ -2,13 +2,13 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "gitranks-contribute",
   "displayName": "GitRanks Contribute",
-  "version": "0.3.6",
+  "version": "0.4.0",
   "description": "Find open-source GitHub issues matched to your skills, fix one with your agent, and approve the pull request yourself.",
   "logo": "assets/icon.png",
   "suggestedPrompts": [
     "Find me an open-source issue to work on with GitRanks",
     "Find a TypeScript bug I could fix today with GitRanks",
-    "Show my GitRanks claims and pull requests, and what each one needs from me"
+    "Show the issues I took on GitRanks and my pull requests, and what each one needs from me"
   ],
   "author": { "name": "GitRanks", "url": "https://gitranks.com" },
   "homepage": "https://gitranks.com/contribute",
