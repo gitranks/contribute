@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "gitranks-contribute",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Find open-source GitHub issues matched to your skills, fix one with your agent, and approve the pull request yourself.",
   "author": {
     "name": "GitRanks",
@@ -101,7 +101,7 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "First submission: find open-source GitHub issues matched to your skills, claim one and get its brief, track claims and pull requests; fixes are made by an agent with a shell and approved by you on gitranks.com."
+        "release_notes": "First submission: find open-source GitHub issues matched to your skills, take one and get its brief, track the issues you took and your pull requests; fixes are made by an agent with a shell and approved by you on gitranks.com."
       }
     }
   }

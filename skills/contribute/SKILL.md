@@ -40,7 +40,7 @@ https://github.com/gitranks/contribute#use-a-token-instead.
    how the repository builds and tests, and its contribution rules. Claim only the issue the user picked: each claim
    counts against the user's full issues a day, refused ones included. That is 10 to 70 by their GitRanks tier, plus 5
    for each pull request merged through GitRanks, up to 100. An issue the user holds open on gitranks.com is claimed
-   at no new cost. Tell the user which issue you claimed and until when it is held. If the claim is refused, tell
+   at no new cost. Tell the user which issue you took and until when it is held. If the claim is refused, tell
    them why in plain words and offer the next issue (`not_available`: the issue is not open to them yet, so pick
    another from `find_issues`). At your attempts at a time, `my_contributions` lists them;
    past the day's full issues, more come at 00:00 UTC.
@@ -58,19 +58,19 @@ https://github.com/gitranks/contribute#use-a-token-instead.
    - Don't touch CI configuration, license files or lockfiles, and don't upgrade dependencies, unless the issue asks.
 5. **Hand back.** Call `submit_patch` with `git format-patch --stdout origin/<baseBranch>..HEAD`, a summary, the tests
    you ran, and `brief`: what you checked, what you found and what you changed (or why nothing). The checks run at once.
-   If they fail, fix the patch and submit again, and tell the user which check failed and what you changed. Each
-   failed answer gives `submissionsLeft`; the fifth failure ends the claim: then tell the user which checks failed and
-   why the claim ended, and offer `find_issues`. If you can't make it pass before then, say so and give the issue back
-   with `release_issue`.
+   If they fail, fix the patch and submit again, and tell the user which check failed and what you changed. Each failed
+   answer gives `submissionsLeft`; the fifth failure ends the claim: then tell the user which checks failed and that the
+   issue is no longer held for them, and offer `find_issues`. If you can't make it pass before then, say so and give the
+   issue back with `release_issue`.
 6. **Tell the user** to review and approve the pull request within 48 hours: give them the link from the answer to
    `submit_patch`. Unless they turned autopilot on, nothing reaches GitHub until they approve it there; the first
    time, gitranks.com asks for GitHub access to fork the repository and open the pull request in their name. With
    autopilot on, the answer says when it is submitted; the same link lets them stop it. If they send it back with a
    note, `my_contributions` shows it (`changesRequested`): fix it and call `submit_patch` again.
 
-If you can't run a shell here (for example a chat app on the web or on a phone), you can still find, claim and track
+If you can't run a shell here (for example a chat app on the web or on a phone), you can still find, take and track
 issues. Say that the fix needs an agent with a shell, such as Codex or Claude Code, signed in to the same GitRanks
-account, which can pick up the claim; or offer to give it back with `release_issue`.
+account, which can pick up the issue; or offer to give it back with `release_issue`.
 
 Other tools:
 - `my_contributions` lists the user's claims and pull requests.
@@ -101,15 +101,18 @@ gitranks.com gives them for the issue they picked), call `claim_issue` with that
 flow); after a Learn claim, offer `release_issue` instead.
 
 1. **Find and claim in Learn mode.** Pass `mode: "learn"` to `find_issues` (issues that fit the user's Learn goal,
-   masked as above) and to `claim_issue`, with the item's `masked.id` as `maskId`. The claim's answer adds
-   `lessonBrief`: who the lesson is for, its shape (4 to 6 steps of typed blocks: text, diagrams, diffs, code), the
-   question rules and an example. Follow it.
+   masked as above; each item also gives `lesson`, the course lesson the issue teaches or null, and `lessonWhy`:
+   `uses_learned`, `teaches_new` or `no_lesson`) and to `claim_issue`, with the item's `masked.id` as `maskId`. The
+   claim's answer adds `lesson` and `lessonBrief`: who the lesson is for, its shape (4 to 6 steps of typed blocks: text,
+   diagrams, diffs, code), the question rules and an example. Follow it.
 2. **Fix in one commit.** Squash your work into one commit (`git reset --soft origin/<baseBranch> && git commit`) and
    call `submit_patch` with `verdict: "done"`. When the checks pass, the claim stays open: the lesson is needed.
-3. **Hand back the lesson.** Call `submit_lesson` with the `attemptId` and the `lesson` the brief describes. The checks
-   and a short review run at once. A failure answers `lesson_failed` with its `findings` and `callsLeft`: fix each
-   finding and call it again. The fifth failed call for one patch ends the claim. A `try_later` answer means the review
-   cannot run now: call again after its `retryAfterSec`.
+3. **Hand back the lesson.** Call `submit_lesson` with the `attemptId` and the `lesson` the brief describes. When the
+   `lessonBrief` lists the issue's lessons, add `courseLesson`: the slug of the one lesson your change used, or null for
+   none; otherwise leave it out. A slug the brief did not list answers `unknown_lesson` (no failed call counted): use
+   one it lists, or null. The checks and a short review run at once. A failure answers `lesson_failed` with its
+   `findings` and `callsLeft`: fix each finding and call it again. The fifth failed call for one patch ends the claim. A
+   `try_later` answer means the review cannot run now: call again after its `retryAfterSec`.
 4. **A new patch needs a new lesson.** After a changed `submit_patch`, call `submit_lesson` again. When the user sends
    the work back asking only for a better lesson, call `submit_lesson` again without a new patch.
 5. **Tell the user** to take the lesson and approve the pull request on gitranks.com. The answer has the link.
