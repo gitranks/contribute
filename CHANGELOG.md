@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- The README no longer calls GitRanks Contribute a beta.
+
 ## 0.4.1 (2026-11-24)
 
 - GitRanks Learn: each item `find_issues` lists in Learn mode also gives `lesson`, the course lesson the issue teaches

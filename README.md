@@ -13,7 +13,7 @@ This repository connects your own agent (Claude Code, Codex, Cursor, Gemini CLI 
 MCP server at `https://mcp.gitranks.com/mcp`, and adds a `contribute` skill that walks it through one issue. It holds
 only configuration and instructions: the server runs on GitRanks.
 
-GitRanks Contribute is in beta. It is free.
+GitRanks Contribute is free.
 
 ## How you connect
 
