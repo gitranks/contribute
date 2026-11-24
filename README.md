@@ -290,7 +290,8 @@ When you sign in:
 
 With every tool call, the access token (or your personal token, when you use one), and:
 - the filters you ask `find_issues` for;
-- the issue you claim or give back, with the reason and your note;
+- the issue you claim (a listed issue's masked id, its id or its GitHub link) or give back, with the reason and your
+  note;
 - the change you hand back: the patch (`git format-patch`), your agent's verdict, summary and brief, the tests it ran
   with their output, its risk notes, and the pull request title and text it suggests;
 - your agent's name and the model it runs on, as it reports them with a change or a proof;
