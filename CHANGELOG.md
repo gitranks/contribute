@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.4.4 (2026-11-24)
+
 - GitRanks Learn: Learn mode lists the issues the user's Learn Issues page shows For you, from their Learn languages
   and level; the skill no longer speaks of a Learn goal.
 
