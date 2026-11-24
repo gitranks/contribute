@@ -11,9 +11,10 @@
   request merged through GitRanks, up to 100. An issue the user holds open on gitranks.com is claimed at no new cost.
 - `release_issue`: the skill names the reasons. A fixed, closed, taken, turned-down or outdated issue is read again on
   GitHub and taken out for everyone if it is no longer open; any other reason gives it back to others.
-- The GitRanks rule in the skill now says what follows a pull request opened outside GitRanks for an issue the user
-  took (a message, then 5 full issues a day for 7 days, then access to real issues closed), and what follows taking
-  many issues with few pull requests through GitRanks (a message, then 5 full issues a day, then access closed).
+- The GitRanks rule in the skill, word for word as the server's: each claim counts against the user's full issues a
+  day, and a pull request opened outside GitRanks for an issue taken here, or many claims with few pull requests
+  through GitRanks, brings a message, then 5 full issues a day, then access to real issues closed. It no longer speaks
+  of shown issues or a shorter list.
 
 ## 0.3.6 (2026-11-22)
 

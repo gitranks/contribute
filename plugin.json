@@ -53,7 +53,7 @@
               "description": "Shows the issues picked for the signed-in contributor",
               "prompt": "Find me an open-source issue to work on",
               "tools_triggered": "find_issues",
-              "expected_behavior": "Shows the best of the open GitHub issues picked for the account (one in detail, or several), each with its repository, title and link, and whether it can be claimed now; it may offer to claim one. Nothing is claimed."
+              "expected_behavior": "Shows the best of the open GitHub issues picked for the account (one in detail, or several), each with its title, language, kind, size, the project's tier and hints (issue details are hidden until a claim: no repository or link); it may offer to claim one. Nothing is claimed."
             },
             {
               "description": "Narrows the picks by language and size",
