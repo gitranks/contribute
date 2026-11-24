@@ -4,16 +4,19 @@
 
 ## 0.4.0
 
-- Issue details are hidden until a claim. `find_issues` lists masked issues: a rewritten title, the language, the
-  kind, the size, the project's tier and hints, with no repository or link. The skill and `/gitranks-contribute:find`
-  show those and claim the issue the user picks by its `masked.id` (`claim_issue`'s `maskId`).
-- Each claim counts against the user's full issues a day: 10 to 70 by their GitRanks tier, plus 5 for each pull
-  request merged through GitRanks, up to 100. An issue the user holds open on gitranks.com is claimed at no new cost.
+- Issue details are hidden until an issue is taken. `find_issues` lists masked issues: a rewritten title, the
+  language, the kind, the size, the project's tier and hints, with no repository or link. The skill and
+  `/gitranks-contribute:find` show those and take the issue the user picks by its `masked.id` (`claim_issue`'s
+  `maskId`).
+- Each issue taken counts against the user's full issues a day: 10 to 70 by their GitRanks tier, plus 5 for each pull
+  request merged through GitRanks, up to 100. An issue the user holds open on gitranks.com is taken at no new cost.
+- When the agent talks to the user, it says they take an issue. `/gitranks-contribute:status` lists the issues the
+  user took.
 - `release_issue`: the skill names the reasons. A fixed, closed, taken, turned-down or outdated issue is read again on
   GitHub and taken out for everyone if it is no longer open; any other reason gives it back to others.
-- The GitRanks rule in the skill, word for word as the server's: each claim counts against the user's full issues a
-  day, and a pull request opened outside GitRanks for an issue taken here, or many claims with few pull requests
-  through GitRanks, brings a message, then 5 full issues a day, then access to real issues closed. It no longer speaks
+- The GitRanks rule in the skill, word for word as the server's: each issue taken counts against the user's full
+  issues a day, and a pull request opened outside GitRanks for an issue taken here, or many issues taken with few pull
+  requests through GitRanks, brings a message, then 5 full issues a day, then access to real issues closed. It no longer speaks
   of shown issues or a shorter list.
 
 ## 0.3.6 (2026-11-22)

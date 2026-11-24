@@ -9,8 +9,8 @@ GitRanks Contribute recommends open-source issues that fit the user, and you fix
 open the pull request: the user reviews your change and approves it on gitranks.com, and GitRanks opens it under the
 user's name.
 
-After each step, tell the user what happened and what comes next. Setup, every step and help:
-https://gitranks.com/contribute/mcp.
+After each step, tell the user what happened and what comes next. To the user, say they take an issue: `claim_issue`
+is only the tool's name. Setup, every step and help: https://gitranks.com/contribute/mcp.
 
 ## Connecting
 
