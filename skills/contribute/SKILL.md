@@ -58,10 +58,10 @@ https://github.com/gitranks/contribute#use-a-token-instead.
    - Don't touch CI configuration, license files or lockfiles, and don't upgrade dependencies, unless the issue asks.
 5. **Hand back.** Call `submit_patch` with `git format-patch --stdout origin/<baseBranch>..HEAD`, a summary, the tests
    you ran, and `brief`: what you checked, what you found and what you changed (or why nothing). The checks run at once.
-   If they fail, fix the patch and submit again, and tell the user which check failed and what you changed. Each
-   failed answer gives `submissionsLeft`; the fifth failure ends the claim: then tell the user which checks failed and
-   that the issue is no longer held for them, and offer `find_issues`. If you can't make it pass before then, say so and give the issue back
-   with `release_issue`.
+   If they fail, fix the patch and submit again, and tell the user which check failed and what you changed. Each failed
+   answer gives `submissionsLeft`; the fifth failure ends the claim: then tell the user which checks failed and that the
+   issue is no longer held for them, and offer `find_issues`. If you can't make it pass before then, say so and give the
+   issue back with `release_issue`.
 6. **Tell the user** to review and approve the pull request within 48 hours: give them the link from the answer to
    `submit_patch`. Unless they turned autopilot on, nothing reaches GitHub until they approve it there; the first
    time, gitranks.com asks for GitHub access to fork the repository and open the pull request in their name. With
@@ -103,16 +103,16 @@ flow); after a Learn claim, offer `release_issue` instead.
 1. **Find and claim in Learn mode.** Pass `mode: "learn"` to `find_issues` (issues that fit the user's Learn goal,
    masked as above; each item also gives `lesson`, the course lesson the issue teaches or null, and `lessonWhy`:
    `uses_learned`, `teaches_new` or `no_lesson`) and to `claim_issue`, with the item's `masked.id` as `maskId`. The
-   claim's answer adds `lesson` and `lessonBrief`: who the lesson is for, its shape (4 to 6 steps of typed blocks: text, diagrams, diffs, code), the
-   question rules and an example. Follow it.
+   claim's answer adds `lesson` and `lessonBrief`: who the lesson is for, its shape (4 to 6 steps of typed blocks: text,
+   diagrams, diffs, code), the question rules and an example. Follow it.
 2. **Fix in one commit.** Squash your work into one commit (`git reset --soft origin/<baseBranch> && git commit`) and
    call `submit_patch` with `verdict: "done"`. When the checks pass, the claim stays open: the lesson is needed.
 3. **Hand back the lesson.** Call `submit_lesson` with the `attemptId` and the `lesson` the brief describes. When the
-   `lessonBrief` lists the issue's lessons, add `courseLesson`: the slug of the one lesson your change used, or null
-   for none; otherwise leave it out. The checks
-   and a short review run at once. A failure answers `lesson_failed` with its `findings` and `callsLeft`: fix each
-   finding and call it again. The fifth failed call for one patch ends the claim. A `try_later` answer means the review
-   cannot run now: call again after its `retryAfterSec`.
+   `lessonBrief` lists the issue's lessons, add `courseLesson`: the slug of the one lesson your change used, or null for
+   none; otherwise leave it out. A slug the brief did not list answers `unknown_lesson` (no failed call counted): use
+   one it lists, or null. The checks and a short review run at once. A failure answers `lesson_failed` with its
+   `findings` and `callsLeft`: fix each finding and call it again. The fifth failed call for one patch ends the claim. A
+   `try_later` answer means the review cannot run now: call again after its `retryAfterSec`.
 4. **A new patch needs a new lesson.** After a changed `submit_patch`, call `submit_lesson` again. When the user sends
    the work back asking only for a better lesson, call `submit_lesson` again without a new patch.
 5. **Tell the user** to take the lesson and approve the pull request on gitranks.com. The answer has the link.

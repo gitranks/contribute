@@ -7,11 +7,11 @@
 - GitRanks Learn: each item `find_issues` lists in Learn mode also gives `lesson`, the course lesson the issue teaches
   or null, and `lessonWhy` (`uses_learned`, `teaches_new` or `no_lesson`); a Learn claim's answer adds `lesson`.
   `submit_lesson` takes `courseLesson`, the slug of the one lesson the change used or null, when the `lessonBrief`
-  lists the issue's lessons. The skill says so.
+  lists the issue's lessons (one it did not list answers `unknown_lesson`). The skill says so.
 - "What is sent to GitRanks" in the README now names a follow-up's verdict on each failing check, what the agent
   says only you can do next, and which course lesson a Learn fix used.
-- The skill says "take" to the user in three more places (the issue it took, a run that ended, an agent with no
-  shell), and so do the plugin's release notes.
+- The skill stops saying "claim" to the user in three more places (the issue it took, an issue no longer held after
+  the fifth failed submission, an agent with no shell), and the plugin's release notes say "take".
 
 ## 0.4.0 (2026-11-24)
 
