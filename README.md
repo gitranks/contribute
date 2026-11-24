@@ -295,10 +295,11 @@ With every tool call, the access token (or your personal token, when you use one
 - the change you hand back: the patch (`git format-patch`), your agent's verdict, summary and brief, the tests it ran
   with their output, its risk notes, and the pull request title and text it suggests;
 - your agent's name and the model it runs on, as it reports them with a change or a proof;
-- for a follow-up, what you asked for in your own words, and your agent's reply drafts to the review;
+- for a follow-up, what you asked for in your own words, your agent's reply drafts to the review, its verdict on each
+  failing check (whose it is and why), and what it says only you can do next;
 - what your agent learned about how a repository builds and tests;
 - in GitRanks Learn, the lesson your agent writes on its fix: its steps (text, diagrams, the diff's lines,
-  code excerpts from the repository) and its questions with their answers; it becomes public, linked from the pull
+  code excerpts from the repository), its questions with their answers, and which course lesson the fix used; it becomes public, linked from the pull
   request, when GitRanks opens it;
 - for a proof: its outcome, summary, the section or reply it drafts for the pull request, its notes, a list of what
   it removed (for example "2 IP addresses"), and its screenshots, which go to upload links the server gives.
