@@ -16,7 +16,8 @@ in your name. Free.
 1. **Your agent finds issues picked for you**, checked ready: still open, nobody on it, wanted by the maintainers, no
    ban on AI-assisted pull requests.
 2. **It takes one and fixes it** on a fresh copy of the project, and hands the change back.
-3. **You approve the pull request on gitranks.com.** Nothing reaches GitHub before you do.
+3. **You approve the pull request on gitranks.com.** Unless you turn autopilot on, nothing reaches GitHub before
+   you do.
 
 ## Before your agent takes its first issue
 
@@ -65,7 +66,8 @@ choose one. Before it takes the first one, it gives you the link to the
 [setup](#before-your-agent-takes-its-first-issue). When it hands the change back, it gives you a link: review the change
 there and approve the pull request. Unless you turn autopilot on, nothing reaches GitHub before you approve it; the
 first time, gitranks.com asks for GitHub access to fork the repository and open the pull request in your name. Setup
-for every client, troubleshooting and help: [the MCP docs](https://gitranks.com/contribute/mcp?utm_source=github&utm_campaign=plugin-readme).
+for every client, troubleshooting and help:
+[the MCP docs](https://gitranks.com/contribute/mcp?utm_source=github&utm_campaign=plugin-readme).
 
 ### One-click install
 
@@ -254,9 +256,9 @@ the server for each plugin format below. Each connects by signing in.
 
 For a client without sign-in, or a script, create a personal token on gitranks.com, on
 [Your agent](https://gitranks.com/my/agent?utm_source=github&utm_campaign=plugin-readme). It starts with `gr_`. Send it
-in the `X-GitRanks-Token` header, or as `Authorization: Bearer <your token>`. Keep it to yourself: it acts as you until you revoke it there. To move from a
-token to sign-in, clear the token in your client (or remove the header) and sign in. Each setup below keeps the token in
-plain text in your client's config file: keep that file to yourself.
+in the `X-GitRanks-Token` header, or as `Authorization: Bearer <your token>`. Keep it to yourself: it acts as you until
+you revoke it there. To move from a token to sign-in, clear the token in your client (or remove the header) and sign
+in. Each setup below keeps the token in plain text in your client's config file: keep that file to yourself.
 
 - **Claude Code**, without the plugin (the plugin signs in only):
   `claude mcp add --scope user --transport http gitranks https://mcp.gitranks.com/mcp --header "X-GitRanks-Token: <your GitRanks token>"`.

@@ -37,7 +37,7 @@ finished, give the user the link it names and take no issue until they are done.
    has `masked` null. Show the user a few candidates and let them pick, unless they already named one. If nothing
    matches your filters, offer fewer. With none and nothing back, say a new account's first picks take a minute or
    two and new ones come every day; if the user picked languages or kinds, they can widen them at
-   https://gitranks.com/contribute/settings#work. For more, ask for the next page with `after`.
+   https://gitranks.com/my/settings/work. For more, ask for the next page with `after`.
 2. **Claim.** Call `claim_issue` with the item's `masked.id` as `maskId`, or with the `issueId` or GitHub URL of an
    issue shown in full or named by the user. The answer is the brief: the full issue, the clone URL, the base branch,
    how the repository builds and tests, and its contribution rules. Claim only the issue the user picked: each claim

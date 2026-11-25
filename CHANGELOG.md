@@ -12,7 +12,7 @@
   request on gitranks.com. New parts: the install buttons up top, "How it works", "Before your agent takes its first
   issue" (with the setup link), "Learn while you fix" and "Your GitRanks pages". "How you connect" is now the first
   part of "Install", and the README and `llms-install.md` point to Your agent on gitranks.com for connected agents
-  and personal tokens.
+  and personal tokens. The skill's link for widening languages or kinds goes to the Settings page itself.
 - New description in every manifest: "Your agent fixes open-source issues picked for you. You approve every pull
   request on gitranks.com." Devin's short description is "Fix picked open-source issues".
 
