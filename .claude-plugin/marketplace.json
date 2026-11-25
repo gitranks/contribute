@@ -6,7 +6,7 @@
     {
       "name": "gitranks-contribute",
       "source": "./",
-      "description": "Find open-source GitHub issues matched to your skills, fix one with Claude, and approve the pull request yourself."
+      "description": "Your agent fixes open-source issues picked for you. You approve every pull request on gitranks.com."
     }
   ]
 }

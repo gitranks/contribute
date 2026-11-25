@@ -1,9 +1,9 @@
 {
   "name": "gitranks-contribute",
   "displayName": "GitRanks Contribute",
-  "version": "0.4.4",
-  "description": "Find open-source GitHub issues matched to your skills, fix one with your agent, and approve the pull request yourself",
-  "shortDescription": "Open-source issues to contribute to",
+  "version": "0.5.0",
+  "description": "Your agent fixes open-source issues picked for you. You approve every pull request on gitranks.com.",
+  "shortDescription": "Fix picked open-source issues",
   "author": { "name": "GitRanks", "url": "https://gitranks.com" },
   "homepage": "https://gitranks.com/contribute",
   "repository": "https://github.com/gitranks/contribute",
