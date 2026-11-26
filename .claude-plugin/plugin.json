@@ -1,7 +1,7 @@
 {
   "name": "gitranks-contribute",
   "displayName": "GitRanks Contribute",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Your agent fixes open-source issues picked for you. You approve every pull request on gitranks.com.",
   "author": { "name": "GitRanks", "url": "https://gitranks.com" },
   "homepage": "https://gitranks.com/contribute",
