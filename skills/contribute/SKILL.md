@@ -67,10 +67,9 @@ finished, give the user the link it names and take no issue until they are done.
    issue is no longer held for them, and offer `find_issues`. If you can't make it pass before then, say so and give the
    issue back with `release_issue`.
 6. **Tell the user** to review and approve the pull request within 48 hours: give them the link from the answer to
-   `submit_patch`. Unless they turned autopilot on, nothing reaches GitHub until they approve it there; the first
-   time, gitranks.com asks for GitHub access to fork the repository and open the pull request in their name. With
-   autopilot on, the answer says when it is submitted; the same link lets them stop it. If they send it back with a
-   note, `my_contributions` shows it (`changesRequested`): fix it and call `submit_patch` again.
+   `submit_patch`. Nothing reaches GitHub until they approve it there; the first time, gitranks.com asks for GitHub
+   access to fork the repository and open the pull request in their name. If they send it back with a note,
+   `my_contributions` shows it (`changesRequested`): fix it and call `submit_patch` again.
 
 If you can't run a shell here (for example a chat app on the web or on a phone), you can still find, take and track
 issues. Say that the fix needs an agent with a shell, such as Codex or Claude Code, signed in to the same GitRanks

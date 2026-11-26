@@ -15,6 +15,8 @@
   and personal tokens. The skill's link for widening languages or kinds goes to the Settings page itself.
 - New description in every manifest: "Your agent fixes open-source issues picked for you. You approve every pull
   request on gitranks.com." Devin's short description is "Fix picked open-source issues".
+- The README and the skill no longer speak of autopilot, which GitRanks does not have yet: nothing reaches GitHub
+  before the user approves the pull request on gitranks.com.
 
 ## 0.4.4 (2026-11-24)
 
