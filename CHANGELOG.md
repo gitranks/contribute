@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## 0.5.0 (2026-11-25)
+
+- Before an agent takes its first issue, the user finishes a 2-minute setup on gitranks.com once: it shows how
+  approval works, what the agent may do and the daily limits. The skill says: if an answer says setup is not
+  finished, give the user the link it names and take no issue until they are done (when connecting, when taking an
+  issue, and in GitRanks Learn). A `setup_unfinished` refusal takes none of the day's full issues.
+- The README opens with what happens: your agent fixes open-source issues picked for you, and you approve each pull
+  request on gitranks.com. New parts: the install buttons up top, "How it works", "Before your agent takes its first
+  issue" (with the setup link), "Learn while you fix" and "Your GitRanks pages". "How you connect" is now the first
+  part of "Install", and the README and `llms-install.md` point to Your agent on gitranks.com for connected agents
+  and personal tokens. The skill's link for widening languages or kinds goes to the Settings page itself.
+- New description in every manifest: "Your agent fixes open-source issues picked for you. You approve every pull
+  request on gitranks.com." Devin's short description is "Fix picked open-source issues".
+
 ## 0.4.4 (2026-11-24)
 
 - GitRanks Learn: Learn mode lists the issues the user's Learn Issues page shows For you, from their Learn languages

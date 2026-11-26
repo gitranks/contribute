@@ -2,8 +2,8 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "gitranks-contribute",
   "displayName": "GitRanks Contribute",
-  "version": "0.4.4",
-  "description": "Find open-source GitHub issues matched to your skills, fix one with your agent, and approve the pull request yourself.",
+  "version": "0.5.0",
+  "description": "Your agent fixes open-source issues picked for you. You approve every pull request on gitranks.com.",
   "logo": "assets/icon.png",
   "suggestedPrompts": [
     "Find me an open-source issue to work on with GitRanks",
