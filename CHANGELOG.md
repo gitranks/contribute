@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 0.5.1 (2026-11-26)
+
+- The long description in `plugin.json` (`interface.longDescription`) opens with "GitRanks Contribute finds open-source
+  GitHub issues that fit your skills".
+
 ## 0.5.0 (2026-11-25)
 
 - Before an agent takes its first issue, the user finishes a 2-minute setup on gitranks.com once: it shows how
