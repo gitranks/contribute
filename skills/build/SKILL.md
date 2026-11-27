@@ -5,6 +5,9 @@ description: Build a project on GitRanks Build, one small step at a time, with t
 
 # GitRanks Build
 
+If the person did not name GitRanks or run `/gitranks-contribute:build`, and the folder has no `.gitranks/build.json`,
+this skill does not apply: go on with what they asked as usual.
+
 In GitRanks Build a person builds a real program from nothing with you, one small step at a time. GitRanks gives
 each step: its code, what to show and tell the person, what to try, a check, and with questions on, a question. You
 follow the step as it is written, and the person learns by reading it and trying it. They see every step, where they
@@ -15,21 +18,27 @@ answers: keep to it in every step, even when an answer seems to leave room.
 
 ## When Build is not open
 
-Build's tools on the `gitranks` server are `list_projects`, `open_build`, `next_step` and `reset_step`. If the server
-is not connected, or a call answers that sign-in is required, connect it first (see Connecting in the `contribute`
-skill). If the server is connected and lists none of Build's tools, tell the person that GitRanks Build is not open
-to them yet, and do nothing else. Never teach the project, write its code or make up its steps without the server.
+Build's tools on the `gitranks` server are `list_projects`, `open_build`, `next_step` and `reset_step`. Decide by
+the tools you see:
+- **No `gitranks` tools at all, or a call answers that sign-in is required:** the server is not connected. Connect it
+  first (see Connecting in the `contribute` skill), then look again.
+- **Other `gitranks` tools (such as `find_issues` or `my_contributions`) but none of Build's:** GitRanks Build is not
+  open to this person yet. Tell them so, and do nothing more for GitRanks Build.
+
+Never teach the project, write its code or make up its steps without the server.
 
 ## Start or continue
 
 - **Which projects.** When the person asks what they can build, or wants to start one without naming it, call
   `list_projects` and let them pick.
-- **Start.** Call `open_build` with `project` (its slug, such as `mcp-server`). The answer lists what to ask and run
+- **Start.** If the folder's `.gitranks/build.json` names that project, continue that build instead (below). Else
+  call `open_build` with `project` (its slug, such as `mcp-server`). The answer lists what to ask and run
   before the start: do those in order, one at a time, asking the person and waiting for each answer. Then call
   `open_build` again with the answers, as it says. Work only inside the build's folder from then on.
 - **Continue.** When the folder has `.gitranks/build.json`, call `open_build` with its `build` as `buildId`. Else
   call `open_build` with nothing: it lists the person's builds in progress and what to ask.
 - Keep the `buildId`: it continues the build in any chat and on any machine.
+- **Questions on or off.** To change it later, call `open_build` with the `buildId` and `questions` (true or false).
 
 ## Each step
 
@@ -38,8 +47,8 @@ An answer that hands out a step has numbered parts. Do them in order, one at a t
 1. **Bring in the code exactly as given.** Run its commands as written, or write each file whole with exactly the
    text shown. Bring in only that code, and nothing else. Before you overwrite a file the person changed by hand (the
    step says how to tell), ask them and wait for their answer. Write `.gitranks/build.json` exactly as the step says.
-   If the fetch fails, or you may not use the network, call `open_build` with the `buildId` and `files: true`: it
-   answers the files themselves.
+   If the fetch fails, or you may not use the network, make the call the answer names for that, with `files: true`:
+   it answers the files themselves.
 2. **Show the person** exactly what the step shows.
 3. **Say the step's text, adding no facts of your own.** Tell the person the text as the step gives it. Do not add
    examples, advice or facts, and do not drop any.
@@ -55,6 +64,10 @@ them the text the step gives for that. If they ask something else, answer it, th
 
 ## What an answer may say
 
+- **The build cannot start.** The language's runtime is missing or too old. Tell the person what to install, as the
+  answer says, and start again once it is installed.
+- **Git has no name and email.** Ask the person which name and email to use for this build's commits, and never take
+  them from anywhere else. Then run the commands the answer gives, or go on with no git if the person prefers.
 - **The check did not pass.** Tell the person what the answer says went wrong and follow its reasons, without writing
   code of your own. The check's command changes after a failure: run the new one from the answer and send what it
   prints. From the second failure the answer offers to set the step again with `reset_step`: offer it to the person.
@@ -76,8 +89,8 @@ them the text the step gives for that. If they ask something else, answer it, th
 - **A refusal.** Tell the person in plain words what it says, then do what it says.
 
 To set the folder back to a step the person passed, or to the step in hand (the files drifted, a check keeps
-failing, or the person asks), call `reset_step` with the `buildId` and the step. It changes no progress and hands
-out no check. Then call `open_build` with the `buildId` to go on.
+failing, or the person asks), call `reset_step` with the `buildId` and the step, and `files: true` when the fetch fails
+or you may not use the network. It changes no progress and hands out no check. Then go on as its answer says.
 
 ## Rules
 
