@@ -40,9 +40,10 @@ make up its steps without the server. GitHub issues are not Build.
 - **Continue.** When the folder has `.gitranks/build.json`, call `open_build` with its `build` as `buildId`. Else
   call `open_build` with nothing: it lists the person's builds and what to ask. Never pick a build for them.
 - Keep the `buildId`: it continues the build in any chat and on any machine.
-- **Questions on or off.** Only when the person asks for it in their own words, call `open_build` with the `buildId`
-  and `questions`; at the check, it answers the check again. On "this is slow" or "go faster", ask what they want:
-  never switch the questions off yourself, and never offer to skip or bundle steps.
+- **Questions on or off** are the person's choice. Send `questions` to `open_build` with the `buildId` only with
+  what the person said. On "this is slow" or "go faster", ask whether to turn them off: never turn them off yourself,
+  and never offer to skip or bundle steps. At the check, a change answers the check again. At answer 1 it answers
+  only that: do not show the step again and never ask a question then; wait for the try, then `tried: true`.
 
 ## Each step
 
@@ -51,10 +52,11 @@ never drop, shorten or reorder one.
 
 **Answer 1, the step** (from `open_build`, or from `next_step` once the step before passed):
 - **Bring in the code** with the lines of part 1, in their order. In a folder with no `.git` folder, `git init`
-  comes first. Run the `git status` it gives on its own and read what it prints before the next command. If it
-  prints anything, a file was changed by hand: stop and ask the person whether to keep it, and commit it only after
-  they say keep. Write `.gitranks/build.json` exactly as the step says, before the commit. If the fetch fails, or you
-  may not use the network, make the call the answer names, with `files: true`.
+  comes first. Run the first git line it gives on its own and read what it prints; if your shell has no `&&`, run
+  its two commands one by one. If either fails, the files it printed were changed by hand: stop, show the person
+  those files and ask whether to keep the change, and commit it only after they say keep. Never run the fetch or
+  the restore after it fails. Write `.gitranks/build.json` exactly as the step says, before the commit. If the
+  fetch fails, or you may not use the network, make the call the answer names, with `files: true`.
 - **Install** only when the step has an install part: only its setup command installs the packages, in the build's
   folder. Never install them any other way, and never send the setup's output as a check.
 - **Show:** paste the step's block to the person whole, as it is, every step, even in a hurry: the files then the
@@ -88,9 +90,8 @@ gives for that. If they ask something else, answer it, then come back to the ste
 - **The answer is not right, or names no option.** Ask the question again and wait for their own pick. Never tell
   them which option is right. If they do not know, they can ask you to explain the step again. Then call
   `next_step` with the same check text and their pick, without `tried`.
-- **Try first.** A check came before the try: it was not judged. If you had already shown the person a check or asked
-  them a question, tell them it was not GitRanks' and does not count. Do the end of answer 1 it gives again, and end
-  your message.
+- **Try first.** A check came before the try: it was not judged. Do the end of answer 1 it gives again, and end your
+  message.
 - **"Tell the person" lines before the step** (a step was corrected or added): say them, then do part 1. When this
   step was corrected since it was handed out, the check you sent ran on older code and was not judged: do the step
   again from part 1, and the person tries it again.
@@ -109,9 +110,11 @@ Do that answer whole: the person tries again, then `tried: true`.
 
 - One step at a time, and every part of it in order. Never run ahead, and never drop a part or the question to go
   faster, even when the person is in a hurry.
-- Until `next_step` with `tried: true` answers, there is no check command and no question: never run the check
-  script before that or with a seed of your own, and never write a question yourself.
-- Never say a check passed before GitRanks answers.
+- After answer 1 you have no check command and no question: both come only from `next_step` with `tried: true`.
+  Never run a check script before that, and never write a question of your own, even after a side talk.
+- Never tell the person a check passed: only GitRanks' answer says that.
+- If you showed the person a check or asked them a question before `tried`, tell them it was not GitRanks' and does
+  not count.
 - The questions are the person's. Never say or hint which option is right before GitRanks answers, and never answer
   for them. Never take a test for them either.
 - Run each setup command and send exactly what it printed. Never fill a version, a path or an email from memory or
