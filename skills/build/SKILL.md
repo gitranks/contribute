@@ -1,6 +1,6 @@
 ---
 name: build
-description: Use for "teach me how to build <X> with GitRanks", "build <X> with GitRanks", "GitRanks Build", "what can I build with GitRanks" and "continue my GitRanks build", such as "Teach me how to build an MCP server with GitRanks". GitRanks Build teaches the user to build a real program step by step. When the user names GitRanks, use this skill before any general help on the thing being built (an MCP server, a CLI). Not for building, compiling or fixing the user's own project. Needs the gitranks MCP server (https://mcp.gitranks.com/mcp).
+description: Use for "teach me how to build <X> with GitRanks", "build <X> with GitRanks", "GitRanks Build", "what can I build with GitRanks" and "continue my GitRanks build", such as "Teach me how to build an MCP server with GitRanks". GitRanks Build teaches the user to build a real program step by step. When the user names GitRanks, use this skill before any general help on the thing being built (an MCP server, a CLI). Not for building, compiling or fixing the user's own project, and not for finding, taking or fixing open-source issues, even when they mention a build or a build system. Needs the gitranks MCP server (https://mcp.gitranks.com/mcp).
 ---
 
 # GitRanks Build
@@ -96,11 +96,17 @@ or you may not use the network. It changes no progress and hands out no check. T
 
 - Follow one step at a time. Never run ahead: no step before the server hands it out, and no part of a step before
   the part above it is done.
-- Never write code of your own for a step, and never change the step's code to make a check pass.
-- Send the check text exactly as it was printed. Never write it, edit it, or run the check on code other than the
-  step's.
-- Ask the person before you overwrite a file they changed.
-- Never take a test, or answer a step's question, for the person.
+- Never drop a part of a step, or its question, to go faster, even when the person is in a hurry.
+- The questions are the person's. Wait for their own pick and send exactly that. Never say or hint at the right
+  option first, and never answer for them. Never take a test for them either.
+- Run each setup command and send what it printed. Never fill in a version or an email from memory or from what you
+  know about the person.
+- If git has no name and email, ask the person which to use. Never choose them yourself.
+- Send the check's whole output unchanged. Never pass it through `head`, `tail` or `grep`, never write or edit it,
+  and never run the check on code other than the step's.
+- If the person changed a file, ask them before anything else. To set a step's files again, use `reset_step`.
+  Never edit the step's code yourself, never write code of your own for a step, and never change the code to make a
+  check pass.
 
 ## Help
 
