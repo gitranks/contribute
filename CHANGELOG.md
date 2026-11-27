@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.6.1 (2026-11-27)
+
+- GitRanks Build is not open to everyone yet. When it is open to you, each step now comes in two answers: first the
+  step (its code, what to show and tell you, and what to try), then, once you tried it and wrote back, its check
+  and, with questions on, its question. The `build` skill and `/gitranks-contribute:build` say so: your agent ends
+  its message after inviting you to try, and asks for the check only when you write back.
+- The `build` skill: your agent never runs a check or asks a question before GitRanks gives them, never says a check
+  passed (only GitRanks does), and turns the step questions on or off only when you ask for it. When a file was
+  changed by hand, it stops before bringing in a step's code and asks you whether to keep the change.
+
 ## 0.6.0 (2026-11-27)
 
 - GitRanks Build is not open to everyone yet: it opens step by step. When it is open to you, a new `build` skill
