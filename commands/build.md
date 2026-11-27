@@ -1,5 +1,5 @@
 ---
-description: Start or continue a project on GitRanks Build, where your agent builds a real program with you one step at a time
+description: Build a real program step by step with GitRanks Build, or continue your GitRanks build
 argument-hint: "[project]"
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: build
-description: Build a project on GitRanks Build, one small step at a time, with the code and the checks GitRanks gives. Use only when the user asks to build a project with GitRanks (for example "Teach me how to build an MCP server with GitRanks"), asks what they can build with GitRanks, asks to continue their GitRanks build, or says "continue my build" in a folder that has a .gitranks/build.json file. Not for building, compiling, running or fixing the user's own project or a failing build, and not for open-source issues. Needs the gitranks MCP server (https://mcp.gitranks.com/mcp).
+description: Use for "teach me how to build <X> with GitRanks", "build <X> with GitRanks", "GitRanks Build", "what can I build with GitRanks" and "continue my GitRanks build", such as "Teach me how to build an MCP server with GitRanks". GitRanks Build teaches the user to build a real program step by step. When the user names GitRanks, use this skill before any general help on the thing being built (an MCP server, a CLI). Not for building, compiling or fixing the user's own project. Needs the gitranks MCP server (https://mcp.gitranks.com/mcp).
 ---
 
 # GitRanks Build
