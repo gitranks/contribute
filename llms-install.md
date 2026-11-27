@@ -13,7 +13,8 @@ today's example issues) is at https://gitranks.com/contribute/agents.md.
 3. Check the connection by calling `find_issues`. A 401 after sign-in means the user cancelled or disconnected the
    agent on gitranks.com: sign in again.
 4. Read `skills/contribute/SKILL.md` for the loop: find, claim, fix on a fresh clone, hand the patch back with
-   `submit_patch`. Never push or open a pull request: the user approves it on gitranks.com.
+   `submit_patch`. Never push or open a pull request: the user approves it on gitranks.com. For GitRanks Build, read
+   `skills/build/SKILL.md`.
 
 ## Use a token instead
 
