@@ -39,8 +39,10 @@ make up its steps without the server. GitHub issues are not Build.
   as it says. Work only inside the build's folder from then on.
 - **Continue.** When the folder has `.gitranks/build.json`, call `open_build` with its `build` as `buildId`. Else
   call `open_build` with nothing: it lists the person's builds and what to ask. Never pick a build for them.
-- Keep the `buildId`: it continues the build in any chat and on any machine. To turn questions on or off later, call
-  `open_build` with the `buildId` and `questions`; at the check, it answers the check again.
+- Keep the `buildId`: it continues the build in any chat and on any machine.
+- **Questions on or off.** Only when the person asks for it in their own words, call `open_build` with the `buildId`
+  and `questions`; at the check, it answers the check again. On "this is slow" or "go faster", ask what they want:
+  never switch the questions off yourself, and never offer to skip or bundle steps.
 
 ## Each step
 
@@ -86,8 +88,9 @@ gives for that. If they ask something else, answer it, then come back to the ste
 - **The answer is not right, or names no option.** Ask the question again and wait for their own pick. Never tell
   them which option is right. If they do not know, they can ask you to explain the step again. Then call
   `next_step` with the same check text and their pick, without `tried`.
-- **Try first.** A check came before the try: it was not judged. Do the end of answer 1 it gives again, and end your
-  message.
+- **Try first.** A check came before the try: it was not judged. If you had already shown the person a check or asked
+  them a question, tell them it was not GitRanks' and does not count. Do the end of answer 1 it gives again, and end
+  your message.
 - **"Tell the person" lines before the step** (a step was corrected or added): say them, then do part 1. When this
   step was corrected since it was handed out, the check you sent ran on older code and was not judged: do the step
   again from part 1, and the person tries it again.
@@ -106,6 +109,9 @@ Do that answer whole: the person tries again, then `tried: true`.
 
 - One step at a time, and every part of it in order. Never run ahead, and never drop a part or the question to go
   faster, even when the person is in a hurry.
+- Until `next_step` with `tried: true` answers, there is no check command and no question: never run the check
+  script before that or with a seed of your own, and never write a question yourself.
+- Never say a check passed before GitRanks answers.
 - The questions are the person's. Never say or hint which option is right before GitRanks answers, and never answer
   for them. Never take a test for them either.
 - Run each setup command and send exactly what it printed. Never fill a version, a path or an email from memory or

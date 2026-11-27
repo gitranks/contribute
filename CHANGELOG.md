@@ -8,6 +8,8 @@
   step (its code, what to show and tell you, and what to try), then, once you tried it and wrote back, its check
   and, with questions on, its question. The `build` skill and `/gitranks-contribute:build` say so: your agent ends
   its message after inviting you to try, and asks for the check only when you write back.
+- The `build` skill: your agent never runs a check or asks a question before GitRanks gives them, never says a check
+  passed before GitRanks answers, and turns the step questions on or off only when you ask for it.
 
 ## 0.6.0 (2026-11-27)
 
