@@ -2,7 +2,7 @@
   "$schema": "https://antigravity.google/schemas/v1/plugin.json",
   "name": "gitranks-contribute",
   "displayName": "GitRanks Contribute",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Your agent fixes open-source issues picked for you. You approve every pull request on gitranks.com.",
   "logo": "assets/icon.png",
   "suggestedPrompts": [

@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 0.6.0 (2026-11-27)
+
+- GitRanks Build: a new `build` skill and the command `/gitranks-contribute:build [project]` start or continue a
+  project on GitRanks Build, where your agent builds a real program with you one step at a time. The skill keeps your
+  agent to each step as GitRanks gives it: it brings in only the code given, says the step's text adding no facts,
+  runs the check and sends what it printed, asks you before it overwrites a file you changed, and never runs ahead or
+  writes code of its own. The skill loads only when you ask to build a project with GitRanks, not when you build your
+  own project. When GitRanks Build is not open to you yet, your agent says so and does nothing else.
+- "What is sent to GitRanks" in the README names what GitRanks Build sends.
+
 ## 0.5.1 (2026-11-26)
 
 - The long description in `plugin.json` (`interface.longDescription`) opens with "GitRanks Contribute finds open-source
