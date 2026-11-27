@@ -14,7 +14,8 @@ follow the step as it is written, and the person learns by reading it and trying
 stand and the tests on https://gitranks.com/build.
 
 Each answer of the server is complete in itself and says exactly what to do. This skill is the frame around those
-answers: keep to it in every step, even when an answer seems to leave room.
+answers: keep to it in every step, even when an answer seems to leave room. Some agents keep only the start of the
+server's instructions, so the rules below are the ones to keep.
 
 ## When Build is not open
 
@@ -25,57 +26,80 @@ the tools you see:
 - **Other `gitranks` tools (such as `find_issues` or `my_contributions`) but none of Build's:** GitRanks Build is not
   open to this person yet. Tell them so, and do nothing more for GitRanks Build.
 
-Never teach the project, write its code or make up its steps without the server.
+When the person names GitRanks Build or asks to build or learn to build something with GitRanks, call `list_projects`
+or `open_build` first, before any general help. Never teach the project, write its code or make up its steps without
+the server. Open-source issues are not Build.
 
 ## Start or continue
 
 - **Which projects.** When the person asks what they can build, or wants to start one without naming it, call
   `list_projects` and let them pick.
 - **Start.** If the folder's `.gitranks/build.json` names that project, continue that build instead (below). Else
-  call `open_build` with `project` (its slug, such as `mcp-server`). The answer lists what to ask and run
-  before the start: do those in order, one at a time, asking the person and waiting for each answer. Then call
-  `open_build` again with the answers, as it says. Work only inside the build's folder from then on.
+  call `open_build` with `project` (its slug, such as `mcp-server`). The answer lists what to ask and run before the
+  start: do those in order, one at a time, asking the person and waiting for each answer. Run each command now and
+  send exactly what it printed. Never fill a version, a path or an email from memory or from what you know about the
+  person. Then call `open_build` again with the answers, as it says: the runtime command and the whole line its
+  version command printed; git's version line and the email as printed (the email left out when it printed nothing,
+  git left out when git is not there). Work only inside the build's folder from then on.
 - **Continue.** When the folder has `.gitranks/build.json`, call `open_build` with its `build` as `buildId`. Else
-  call `open_build` with nothing: it lists the person's builds in progress and what to ask.
+  call `open_build` with nothing: it lists the person's builds and what to ask. Never pick a build for them.
 - Keep the `buildId`: it continues the build in any chat and on any machine.
 - **Questions on or off.** To change it later, call `open_build` with the `buildId` and `questions` (true or false).
 
 ## Each step
 
-An answer that hands out a step has numbered parts. Do them in order, one at a time:
+An answer that hands out a step has numbered parts. Do them in order. The first parts (bring in, show, tell, try)
+come every time, in this order, even when the person is in a hurry. Never drop a part or the question to go faster.
+
+Each step names the build's own run command ("This build runs with: ..."). Wherever a command runs the program, use
+exactly that, never another one from memory: never choose between `python`, `python3` and `py` yourself.
 
 1. **Bring in the code exactly as given.** Run its commands as written, or write each file whole with exactly the
-   text shown. Bring in only that code, and nothing else. Before you overwrite a file the person changed by hand (the
-   step says how to tell), ask them and wait for their answer. Write `.gitranks/build.json` exactly as the step says.
-   If the fetch fails, or you may not use the network, make the call the answer names for that, with `files: true`:
-   it answers the files themselves.
-2. **Show the person** exactly what the step shows.
-3. **Say the step's text, adding no facts of your own.** Tell the person the text as the step gives it. Do not add
-   examples, advice or facts, and do not drop any.
-4. **Invite them to try** what the step lists, and let them.
-5. **Run the check** with the exact command the step gives, and keep everything it prints.
-6. **With questions on, ask the question and wait.** The person picks a letter. Never answer it for them and never
-   hint at the right one.
-7. **Call `next_step`** with the `buildId`, the step, the check text exactly as it was printed (all of it, even when
-   it looks wrong) and, with questions on, the letter the person picked.
+   text shown. Bring in only that code, and nothing else. If a file was changed by hand (the step says how to tell),
+   ask the person first. If git says "Author identity unknown", ask the person for a name and email for this folder:
+   never choose them yourself. Write `.gitranks/build.json` exactly as the step says. If the fetch fails, or you may
+   not use the network, make the call the answer names for that, with `files: true`: it answers the files themselves.
+2. **Show the person exactly what the step shows, as it is:** the files, then the whole diff. Never shorten it, sum
+   it up or add notes.
+3. **Tell the person the step's text, adding no facts.** Do not add examples, advice or facts, and do not drop any.
+4. **Invite them to try** what the step lists, and wait until they say they are done.
+5. **Run exactly the check command the step gives.** Send its whole output unchanged: never pipe it into `head`,
+   `tail` or `grep`, and never shorten or retype it.
+6. **With questions on, ask the question with every option, and wait for the person's own pick.** Never say or hint
+   which option is right before GitRanks answers. Send exactly what they picked, even a pick you think is wrong:
+   GitRanks tells them why. If they do not know, send "I don't know".
+7. **Call `next_step`** with the `buildId`, the step, `check` (the whole output of the check, unchanged) and, with
+   questions on, `answer` (exactly what the person picked).
 
 Then the answer is the next step, or the same step with what went wrong. If the person asks to explain more, read
-them the text the step gives for that. If they ask something else, answer it, then come back to the step.
+them the text the step gives for that. If they ask to start the step again, call `reset_step` as the step says. If
+they ask something else, answer it, then come back to the step.
 
 ## What an answer may say
 
 - **The build cannot start.** The language's runtime is missing or too old. Tell the person what to install, as the
   answer says, and start again once it is installed.
-- **Git has no name and email.** Ask the person which name and email to use for this build's commits, and never take
-  them from anywhere else. Then run the commands the answer gives, or go on with no git if the person prefers.
+- **Git has no name and email.** Ask the person which name and email to use for the commits of this build. Never
+  choose them yourself. Then run the commands the answer gives, or go on with no git if the person prefers.
 - **The check did not pass.** Tell the person what the answer says went wrong and follow its reasons, without writing
-  code of your own. The check's command changes after a failure: run the new one from the answer and send what it
-  prints. From the second failure the answer offers to set the step again with `reset_step`: offer it to the person.
-- **The answer is not right.** Tell the person why, ask the question again and wait, then send the letter they pick
-  with the same check text.
-- **The whole step again, with no word that the check failed.** The step's code was corrected after it was handed
-  out, so the check you sent ran on older code and was not judged. Tell the person what the answer says first, bring
-  in the step's code again from part 1, run the check with the command in that answer and send what it prints.
+  code of your own. If the person changed a file, that change is likely why the check fails: ask whether to set the
+  step's files again (`reset_step`, then do what its answer says) or to undo it themselves. Never edit the code
+  yourself. Run the new check command from the answer, exactly, and send its whole output unchanged. From the second
+  failure the answer offers to set the step again: offer it to the person.
+- **The line that differs starts "N more lines (earlier steps' answers and the logs), fingerprint".** One of those
+  earlier lines differs, not this step's own lines. For the person to read every line, run the check command with
+  `--all` at the end and show them its print. Never send that print with `next_step`. Then compare the files with the
+  step's code (with git: `git status`, then `git diff`), ask the person about any change of theirs, or set the step's
+  files again with `reset_step`.
+- **The print with `--all` came back.** It was sent by mistake: it is not judged. Run the check without `--all` and
+  send that.
+- **The answer is not right.** Tell the person why, ask the question again and wait for their own pick. Never say or
+  hint which option is right. Send exactly what they pick, with the same check text.
+- **The answer names no option** (such as "I don't know"). It counts as a try. Tell the person that is fine: they can
+  ask you to explain the step again, then pick the option they think is right. Never tell them which one it is.
+- **This step was corrected since it was handed out.** The check you sent ran on older code and was not judged. Tell
+  the person, bring in the step's code again from part 1, run the check with the command in that answer and send its
+  whole output.
 - **An earlier step was corrected, or a step was added.** Tell the person the line the answer starts with. The step
   in hand brings the fix.
 - **Not the step the build is on.** Go on with the step the answer gives.
@@ -89,24 +113,25 @@ them the text the step gives for that. If they ask something else, answer it, th
 - **A refusal.** Tell the person in plain words what it says, then do what it says.
 
 To set the folder back to a step the person passed, or to the step in hand (the files drifted, a check keeps
-failing, or the person asks), call `reset_step` with the `buildId` and the step, and `files: true` when the fetch fails
-or you may not use the network. It changes no progress and hands out no check. Then go on as its answer says.
+failing, or the person asks to start a step again), call `reset_step` with the `buildId` and the step, and
+`files: true` when the fetch fails or you may not use the network. It changes no progress and hands out no check.
+Then go on as its answer says.
 
 ## Rules
 
 - Follow one step at a time. Never run ahead: no step before the server hands it out, and no part of a step before
   the part above it is done.
 - Never drop a part of a step, or its question, to go faster, even when the person is in a hurry.
-- The questions are the person's. Wait for their own pick and send exactly that. Never say or hint at the right
-  option first, and never answer for them. Never take a test for them either.
-- Run each setup command and send what it printed. Never fill in a version or an email from memory or from what you
-  know about the person.
-- If git has no name and email, ask the person which to use. Never choose them yourself.
-- Send the check's whole output unchanged. Never pass it through `head`, `tail` or `grep`, never write or edit it,
-  and never run the check on code other than the step's.
-- If the person changed a file, ask them before anything else. To set a step's files again, use `reset_step`.
-  Never edit the step's code yourself, never write code of your own for a step, and never change the code to make a
-  check pass.
+- The questions are the person's. Wait for their own pick and send exactly what they picked. Never say or hint which
+  option is right, and never answer for them. Never take a test for them either.
+- Run each setup command and send exactly what it printed. Never fill a version, a path or an email from memory or
+  from what you know about the person.
+- If git has no name and email, ask the person. Never choose them yourself.
+- Use the build's own run command wherever a command runs the program, never another one from memory.
+- Send the check's whole output unchanged: never pipe it into `head`, `tail` or `grep`, and never shorten or retype
+  it. A print with `--all` is only for the person to read: never send it.
+- If the person changed a file, ask them before anything else. `reset_step` sets the step's files again. Never edit
+  the code yourself, and never write code of your own for a step.
 
 ## Help
 
