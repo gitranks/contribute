@@ -2,25 +2,29 @@
 
 ## Unreleased
 
+## 0.7.0 (2026-11-28)
+
+- GitRanks Build is open to every signed-in person. When your agent sees none of Build's tools, the `build` skill and
+  `/gitranks-contribute:build` have it connect the server first.
+
 ## 0.6.1 (2026-11-27)
 
-- GitRanks Build is not open to everyone yet. When it is open to you, each step now comes in two answers: first the
-  step (its code, what to show and tell you, and what to try), then, once you tried it and wrote back, its check
-  and, with questions on, its question. The `build` skill and `/gitranks-contribute:build` say so: your agent ends
-  its message after inviting you to try, and asks for the check only when you write back.
+- GitRanks Build: each step now comes in two answers: first the step (its code, what to show and tell you, and what to
+  try), then, once you tried it and wrote back, its check and, with questions on, its question. The `build` skill and
+  `/gitranks-contribute:build` say so: your agent ends its message after inviting you to try, and asks for the check
+  only when you write back.
 - The `build` skill: your agent never runs a check or asks a question before GitRanks gives them, never says a check
   passed (only GitRanks does), and turns the step questions on or off only when you ask for it. When a file was
   changed by hand, it stops before bringing in a step's code and asks you whether to keep the change.
 
 ## 0.6.0 (2026-11-27)
 
-- GitRanks Build is not open to everyone yet: it opens step by step. When it is open to you, a new `build` skill
-  and the command `/gitranks-contribute:build [project]` start or continue a project on GitRanks Build, where your
-  agent builds a real program with you one step at a time. The skill keeps your agent to each step as GitRanks gives
-  it: it brings in only the code given, says the step's text adding no facts, runs the check and sends what it
-  printed, asks you before it overwrites a file you changed, and never runs ahead or writes code of its own. The
-  skill is written to load only when you ask to build a project with GitRanks, not when you build your own project.
-  When GitRanks Build is not open to you yet, your agent says so and goes on with anything else you asked.
+- A new `build` skill and the command `/gitranks-contribute:build [project]` start or continue a project on GitRanks
+  Build, where your agent builds a real program with you one step at a time. The skill keeps your agent to each step
+  as GitRanks gives it: it brings in only the code given, says the step's text adding no facts, runs the check and
+  sends what it printed, asks you before it overwrites a file you changed, and never runs ahead or writes code of its
+  own. The skill is written to load only when you ask to build a project with GitRanks, not when you build your own
+  project.
 - "What is sent to GitRanks" in the README names what GitRanks Build sends.
 
 ## 0.5.1 (2026-11-26)
